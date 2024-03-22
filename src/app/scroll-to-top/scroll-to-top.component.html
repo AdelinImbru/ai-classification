@@ -1,0 +1,14 @@
+<div
+  class="scroll-to-top w-100"
+  [ngClass]="{ 'show-scrollTop': windowScrolled }"
+>
+  <button
+    type="button"
+    class="btn active"
+    style="background-color: white; border-radius: 50px"
+    data-toggle="button"
+    (click)="scrollToTop()"
+  >
+    <i class="fa-solid fa-arrow-up" style="color: black"></i>
+  </button>
+</div>

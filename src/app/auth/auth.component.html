@@ -1,0 +1,60 @@
+<div class="wrapper">
+<div class="title-container">
+  <div class="title">
+    <h1>
+      <span> Welcome </span>
+      <span> to </span>
+      <span> the </span>
+      <span> AI </span>
+      <span> Classification </span>
+      <span> Website </span>
+    </h1>
+  </div>
+</div>
+<div class="card-wrapper">
+  <a class="login"></a>
+  <mat-card>
+    <mat-card-content>
+      <form [formGroup]="loginForm">
+        <h2>Log In</h2>
+        <mat-error *ngIf="!loginValid">
+          The username and password were not recognized
+        </mat-error>
+        <mat-form-field>
+          <input
+            matInput
+            placeholder="Email"
+            formControlName="email"
+            name="email"
+            (keyup.enter)="onSubmit()"
+            required
+            email
+          />
+          <mat-error> Please provide a valid email address </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input
+            matInput
+            type="password"
+            placeholder="Password"
+            formControlName="password"
+            name="password"
+            (keyup.enter)="onSubmit()"
+            required
+          />
+          <mat-error> Please provide a valid password </mat-error>
+        </mat-form-field>
+        <button
+          mat-raised-button
+          color="primary"
+          [disabled]="!loginForm.valid"
+          (click)="onSubmit()"
+        >
+          Login
+        </button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>
+</div>
+

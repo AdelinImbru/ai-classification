@@ -1,0 +1,40 @@
+<mat-toolbar
+  style="
+    background-color: grey;
+    padding: 0;
+    margin: 0;
+    position: fixed;
+    z-index: 100;
+  "
+>
+  <img
+    src="./././assets/images/logo.png"
+    alt="logo"
+    style="
+      display: inline-flex;
+      max-height: fit-content;
+      max-width: 100px;
+      max-height: 100%;
+      object-fit: cover;
+      opacity: 0.7;
+    "
+  />
+  <div style="display: flex; flex-direction: column; align-items: center">
+    <strong style="color: whitesmoke; padding: 0px; margin: 0">
+      AIClassification
+    </strong>
+    <p style="color: whitesmoke; font-size: 15px; padding: 0px; margin: 0">
+      V 1.0.0
+    </p>
+  </div>
+  <a class="link" href="/home">Home</a>
+  <div class="buttons">
+    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="menu">
+      <mat-icon style="color: whitesmoke">menu</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item type="button" (click)="logout()">Logout</button>
+      <button mat-menu-item type="button" (click)="create()">Create</button>
+    </mat-menu>
+  </div>
+</mat-toolbar>
