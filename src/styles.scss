@@ -1,4 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.custom-dialog-overlay {
+  filter: blur(20px);
+  background-color: rgb(24, 20, 20);
+  opacity: 0.7 !important;
+}
+
+.mat-mdc-dialog-container .mdc-dialog__surface {
+  border: inset !important;
+  border-radius: 30px !important;
+  box-shadow: 15px 15px 30px rgb(25, 25, 25), -15px -15px 30px rgb(60, 60, 60) !important;
+  background: #212121 !important;
+}
+

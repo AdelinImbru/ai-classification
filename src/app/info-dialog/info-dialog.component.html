@@ -1,0 +1,46 @@
+<div class="dialog">
+  <h2>Files format info</h2>
+  <h3 style="font-weight: bold">Attributes file</h3>
+  <p>
+    The attributes file should be a json file that contains a list of attribute
+    objects that must have the following fields:
+    <br />
+    - name(the name of the attribute. ex: qualification)
+    <br />
+    - description(optional description of the attribute. ex: The qualification
+    needed for the job)
+    <br />
+    - type(the type of the field, so what you want to get back from the llm. ex:
+    string will return a string or list[string] will return a list of strings)
+  </p>
+  <h3 style="font-weight: bold">Attributes values file</h3>
+  <p>
+    The attributes values file should be a json file that contains a list of
+    attribute value objects that must have the following fields:
+    <br />
+    - name(the name of the attribute value. ex: Full-time)
+    <br />
+    - description(optional description of the attribute value. ex: Work 8 hours
+    a day, 40 hours a week.)
+    <br />
+    - attribute(the name of the attribute that this value corresponds to. ex:
+    qualification)
+  </p>
+  <h3 style="font-weight: bold">Memory file</h3>
+  <p>
+    The memory file should be a json file that contains a list of json objects
+    that must have the following fields:
+    <br />
+    - memory(this is a json object that has the next fields)
+    <br />
+
+    - field_of_activity(the domain of the classification)
+    <br />
+
+    - input(The input for the llm.)
+    <br />
+
+    - output(The output expected from the llm.)
+  </p>
+  <button mat-button mat-dialog-close>Exit</button>
+</div>

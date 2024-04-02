@@ -1,0 +1,24 @@
+<div class="dialog">
+  <form [formGroup]="createAttributeForm">
+    <h2>Create Attribute</h2>
+    <mat-form-field>
+      <mat-label> Insert the name of the attribute </mat-label>
+      <input matInput formControlName="name" name="name" required />
+      <mat-error> Please provide a name for the attribute </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label> Insert the description of the attribute </mat-label>
+      <input matInput formControlName="description" name="description" />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label> Insert the type of the attribute </mat-label>
+      <input matInput formControlName="type" name="type" />
+    </mat-form-field>
+    <div class="buttons">
+      <button mat-button mat-dialog-close>Exit</button>
+      <button mat-button [mat-dialog-close]="true" (click)="createAttribute()">
+        Create
+      </button>
+    </div>
+  </form>
+</div>

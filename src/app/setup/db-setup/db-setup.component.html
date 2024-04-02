@@ -1,0 +1,89 @@
+<div class="wrapper">
+  <form [formGroup]="dbSetupForm">
+    <div class="header-wrapper">
+      <h2>Database Setup</h2>
+      <button (click)="openDialog()" mat-icon-button>
+        <mat-icon fontIcon="info"></mat-icon>
+      </button>
+    </div>
+    <mat-form-field>
+      <mat-label>Choose a json file for attributes.</mat-label>
+
+      <input
+        matInput
+        disabled
+        value="{{ dbSetupForm.value['attributesFile'] }} "
+        style="color: rgb(19, 9, 9)"
+      />
+      <button mat-icon-button matSuffix (click)="fileInput.click()">
+        <mat-icon>attach_file</mat-icon>
+        <input
+          hidden
+          #fileInput
+          type="file"
+          formControlName="attributesFile"
+          name="attributesFile"
+          accept=".json"
+          required
+        />
+      </button>
+      <mat-error> Please select a json file. </mat-error>
+    </mat-form-field>
+
+    <div class="d-flex">
+      <mat-slide-toggle formControlName="useAttributeValues"></mat-slide-toggle>
+      <p style="color: whitesmoke">Use attribute values</p>
+    </div>
+    <mat-form-field *ngIf="dbSetupForm.value['useAttributeValues']">
+      <mat-label>Choose a json file for attribute values.</mat-label>
+      <input
+        matInput
+        disabled
+        value="{{ dbSetupForm.value['attributeValuesFile'] }} "
+        style="color: rgb(19, 9, 9)"
+      />
+      <button mat-icon-button matSuffix (click)="fileInput.click()">
+        <mat-icon>attach_file</mat-icon>
+      </button>
+      <input
+        hidden
+        #fileInput
+        type="file"
+        formControlName="attributeValuesFile"
+        name="attributeValuesFile"
+        accept=".json"
+        [attr.required]="dbSetupForm.value['useAttributeValues']"
+      />
+      <mat-error> Please choose a file </mat-error>
+    </mat-form-field>
+    <div class="d-flex">
+      <mat-slide-toggle formControlName="useMemory"></mat-slide-toggle>
+      <p style="color: whitesmoke">Use memory</p>
+    </div>
+    <mat-form-field *ngIf="dbSetupForm.value['useMemory']">
+      <mat-label>Choose a json file for attributes.</mat-label>
+      <input
+        matInput
+        disabled
+        value="{{ dbSetupForm.value['memoryFile'] }} "
+        style="color: rgb(19, 9, 9)"
+      />
+      <button mat-icon-button matSuffix (click)="fileInput.click()">
+        <mat-icon>attach_file</mat-icon>
+      </button>
+      <input
+        hidden
+        #fileInput
+        type="file"
+        formControlName="memoryFile"
+        name="memoryFile"
+        accept=".json"
+        [attr.required]="dbSetupForm.value['useMemory']"
+      />
+      <mat-error> Please choose a file </mat-error>
+    </mat-form-field>
+    <button mat-raised-button class="button" (click)="onSubmit()">
+      Submit
+    </button>
+  </form>
+</div>

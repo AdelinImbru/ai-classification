@@ -3,11 +3,16 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 
 const routes: Routes = [
-  // {
-  //   path: '',
-  //   component: AppComponent,
-  //   canActivate: [],
-  // },
+  {
+    path: '',
+    redirectTo: 'home',
+    pathMatch: 'full',
+  },
+  {
+    path: 'setup',
+    loadChildren: () =>
+      import(`./setup/setup.module`).then((m) => m.SetupModule),
+  },
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

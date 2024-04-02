@@ -7,18 +7,21 @@
     z-index: 100;
   "
 >
-  <img
-    src="./././assets/images/logo.png"
-    alt="logo"
+  <a
+    routerLink="/home"
     style="
       display: inline-flex;
       max-height: fit-content;
-      max-width: 100px;
+      max-width: 70px;
       max-height: 100%;
-      object-fit: cover;
-      opacity: 0.7;
     "
-  />
+  >
+    <img
+      src="./././assets/images/logo.png"
+      style="max-width: 100%; max-height: 100%; object-fit: cover; opacity: 0.7"
+      alt="logo"
+    />
+  </a>
   <div style="display: flex; flex-direction: column; align-items: center">
     <strong style="color: whitesmoke; padding: 0px; margin: 0">
       AIClassification
@@ -27,7 +30,8 @@
       V 1.0.0
     </p>
   </div>
-  <a class="link" href="/home">Home</a>
+  <a class="link" routerLink="/home" routerLinkActive="active">Home</a>
+  <a class="link" routerLink="/dbsetup" routerLinkActive="active">Setup</a>
   <div class="buttons">
     <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="menu">
       <mat-icon style="color: whitesmoke">menu</mat-icon>

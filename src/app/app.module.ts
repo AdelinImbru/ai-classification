@@ -16,15 +16,30 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { AuthRoutingModule } from './auth/auth-routing.module';
 import { HomeComponent } from './home/home.component';
 import { HomeRoutingModule } from './home/home-routing.module';
 import { ScrollToTopComponent } from './scroll-to-top/scroll-to-top.component';
+import { SetupModule } from './setup/setup.module';
+import { InfoDialogComponent } from './info-dialog/info-dialog.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { CreateAttributeModalComponent } from './create-attribute-modal/create-attribute-modal.component';
+import { ClassificationComponent } from './classification/classification.component';
 
 @NgModule({
-  declarations: [AppComponent, AuthComponent, NavBarComponent, HomeComponent, ScrollToTopComponent],
+  declarations: [
+    AppComponent,
+    AuthComponent,
+    NavBarComponent,
+    HomeComponent,
+    ScrollToTopComponent,
+    InfoDialogComponent,
+    CreateAttributeModalComponent,
+    ClassificationComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -36,6 +51,7 @@ import { ScrollToTopComponent } from './scroll-to-top/scroll-to-top.component';
     MatCardModule,
     MatSelectModule,
     MatOptionModule,
+    MatSlideToggleModule,
     ReactiveFormsModule,
     MatSortModule,
     MatPaginatorModule,
@@ -44,6 +60,8 @@ import { ScrollToTopComponent } from './scroll-to-top/scroll-to-top.component';
     BrowserAnimationsModule,
     AuthRoutingModule,
     HomeRoutingModule,
+    SetupModule,
+    MatDialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

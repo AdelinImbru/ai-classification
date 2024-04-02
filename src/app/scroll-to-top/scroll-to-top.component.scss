@@ -7,6 +7,7 @@
   opacity: 0;
   transition: all 0.2s ease-in-out;
   mix-blend-mode: difference;
+  z-index: 100;
 }
 
 .show-scrollTop {
