@@ -28,6 +28,9 @@ import { InfoDialogComponent } from './info-dialog/info-dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { CreateAttributeModalComponent } from './create-attribute-modal/create-attribute-modal.component';
 import { ClassificationComponent } from './classification/classification.component';
+import { DndDirective } from './directives/dnd.directive';
+import { ProgressComponent } from './progress/progress.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar'
 
 @NgModule({
   declarations: [
@@ -39,6 +42,8 @@ import { ClassificationComponent } from './classification/classification.compone
     InfoDialogComponent,
     CreateAttributeModalComponent,
     ClassificationComponent,
+    DndDirective,
+    ProgressComponent,
   ],
   imports: [
     BrowserModule,
@@ -62,6 +67,7 @@ import { ClassificationComponent } from './classification/classification.compone
     HomeRoutingModule,
     SetupModule,
     MatDialogModule,
+    MatSnackBarModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
