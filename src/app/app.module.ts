@@ -30,7 +30,8 @@ import { CreateAttributeModalComponent } from './create-attribute-modal/create-a
 import { ClassificationComponent } from './classification/classification.component';
 import { DndDirective } from './directives/dnd.directive';
 import { ProgressComponent } from './progress/progress.component';
-import { MatSnackBarModule } from '@angular/material/snack-bar'
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -68,6 +69,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar'
     SetupModule,
     MatDialogModule,
     MatSnackBarModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

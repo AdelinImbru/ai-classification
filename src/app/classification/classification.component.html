@@ -46,24 +46,23 @@
       </div>
       <div class="files-list">
         <div class="single-file" *ngFor="let file of files; let i = index">
-          <div class="d-flex w-100" style="max-height: 10%">
-            <img src="assets/images/ic-file.svg" alt="file" />
-            <div class="info">
-              <h5 class="name">
-                {{ file?.name }}
-              </h5>
-              <p class="size">
-                {{ formatBytes(file?.size) }}
-              </p>
-              <app-progress [progress]="file?.progress"></app-progress>
-            </div>
-            <img
-              src="assets/images/ic-delete-file.svg"
-              class="delete"
-              alt="file"
-              (click)="deleteFile(i)"
-            />
+          <img src="assets/images/ic-file.svg" alt="file" />
+          <div class="info">
+            <h5 class="name">
+              {{ file?.name }}
+            </h5>
+            <p class="size">
+              {{ formatBytes(file?.size) }}
+            </p>
+            <app-progress [progress]="file?.progress"></app-progress>
           </div>
+          <img
+            src="assets/images/ic-delete-file.svg"
+            class="delete"
+            alt="file"
+            style="width: 5% !important"
+            (click)="deleteFile(i)"
+          />
         </div>
       </div>
     </ng-container>
