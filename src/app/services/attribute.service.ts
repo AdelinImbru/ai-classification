@@ -13,25 +13,26 @@ export interface IAttribute {
   providedIn: 'root',
 })
 export class AttributeService {
-  api = url + 'attribute';
+  api = url.apiKey + 'attribute';
   attribute!: IAttribute[];
   constructor(private http: HttpClient) {}
   getAttribute() {
-    this.http
-      .get(this.api)
-      .subscribe((data) => (this.attribute = data as IAttribute[]));
-    return this.attribute;
+    return this.http.get(this.api);
+  }
+
+  getAttributeById(id: number) {
+    return this.http.get(this.api + '/' + id.toString());
   }
 
   addAttribute(attribute: IAttribute) {
-    this.http.post(this.api + '/', attribute);
+    return this.http.post(this.api + '/', attribute);
   }
 
   updateAttribute(id: number, attribute: IAttribute) {
-    this.http.patch(this.api + '/', attribute);
+    return this.http.patch(this.api + '/' + id.toString(), attribute);
   }
 
   deleteAttribute(id: number) {
-    this.http.delete(this.api + '/' + id.toString());
+    return this.http.delete(this.api + '/' + id.toString() + '/');
   }
 }

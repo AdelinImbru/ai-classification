@@ -33,7 +33,7 @@ export class AttributeFileService {
   }
 
   updateAttribute(id: number, attributeFile: IAttributeFile) {
-    this.http.patch(this.api + '/', attributeFile);
+    this.http.patch(this.api + '/' + id.toString(), attributeFile);
   }
 
   deleteAttribute(id: number) {

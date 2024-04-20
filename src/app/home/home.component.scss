@@ -175,16 +175,17 @@
 .submit {
   border: none;
   outline: none;
-  background-color: rgb(30, 30, 30);
+  background-color: whitesmoke;
   padding: 10px;
   border-radius: 10px;
-  color: #fff;
+  color: black;
   font-size: large;
   transform: 0.3s ease;
 }
 
 .submit:hover {
-  background-color: black;
+  background-color: grey;
+  color: whitesmoke;
 }
 
 .cancel {

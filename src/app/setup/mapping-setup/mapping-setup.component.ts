@@ -2,6 +2,10 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { CreateAttributeModalComponent } from 'src/app/create-attribute-modal/create-attribute-modal.component';
+import {
+  AttributeService,
+  IAttribute,
+} from 'src/app/services/attribute.service';
 
 @Component({
   selector: 'app-mapping-setup',
@@ -9,14 +13,14 @@ import { CreateAttributeModalComponent } from 'src/app/create-attribute-modal/cr
   styleUrls: ['./mapping-setup.component.scss'],
 })
 export class MappingSetupComponent {
-  constructor(private formBuilder: FormBuilder, private dialog: MatDialog) {}
+  constructor(
+    private formBuilder: FormBuilder,
+    private dialog: MatDialog,
+    private attributeService: AttributeService
+  ) {}
   mappingSetupForm!: FormGroup;
   mappingSetupFormValid = true;
-  attributes = [
-    { name: 1, id: 1 },
-    { name: 2, id: 2 },
-    { name: 3, id: 3 },
-  ];
+  attributes!: IAttribute[];
   ngOnInit(): void {
     this.mappingSetupForm = this.formBuilder.group({
       domain: ['', Validators.required],
@@ -28,6 +32,10 @@ export class MappingSetupComponent {
       useCheckPrompt: [false, Validators.required],
     });
     this.mappingSetupForm.markAllAsTouched();
+    this.attributeService
+      .getAttribute()
+      .subscribe((data) => (this.attributes = data as IAttribute[]));
+    console.log(this.attributes);
   }
   onSubmit() {}
 

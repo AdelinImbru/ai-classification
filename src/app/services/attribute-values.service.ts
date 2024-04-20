@@ -29,7 +29,7 @@ export class AttributeValuesService {
   }
 
   updateAttribute(id: number, attributeValues: IAttributeValues) {
-    this.http.patch(this.api + '/', attributeValues);
+    this.http.patch(this.api + '/' + id.toString(), attributeValues);
   }
 
   deleteAttribute(id: number) {

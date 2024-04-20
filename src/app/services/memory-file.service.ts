@@ -28,7 +28,7 @@ export class MemoryFileService {
   }
 
   updateMemoryFile(id: number, memoryFile: IMemoryFile) {
-    this.http.patch(this.api + '/', memoryFile);
+    this.http.patch(this.api + '/' + id.toString(), memoryFile);
   }
 
   deleteMemoryFile(id: number) {

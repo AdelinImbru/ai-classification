@@ -28,7 +28,7 @@ export class MemoryService {
   }
 
   updateMemory(id: number, memory: IMemory) {
-    this.http.patch(this.api + '/', memory);
+    this.http.patch(this.api + '/' + id.toString(), memory);
   }
 
   deleteMemory(id: number) {

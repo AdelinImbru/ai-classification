@@ -32,6 +32,7 @@ import { DndDirective } from './directives/dnd.directive';
 import { ProgressComponent } from './progress/progress.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { HttpClientModule } from '@angular/common/http';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @NgModule({
   declarations: [
@@ -70,6 +71,7 @@ import { HttpClientModule } from '@angular/common/http';
     MatDialogModule,
     MatSnackBarModule,
     HttpClientModule,
+    MatTooltipModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

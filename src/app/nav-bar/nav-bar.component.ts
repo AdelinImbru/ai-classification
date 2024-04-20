@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { IUser, UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-nav-bar',
@@ -7,17 +8,21 @@ import { Router } from '@angular/router';
   styleUrls: ['./nav-bar.component.scss'],
 })
 export class NavBarComponent implements OnInit {
-  user: any;
-  constructor(private router: Router) {}
+  user!: IUser;
+  constructor(private router: Router, private userService: UserService) {}
   ngOnInit(): void {
-    //Get logged user
+    let user = localStorage.getItem('loggedUser');
+    if (user) {
+      this.user = JSON.parse(user);
+    }
   }
 
   logout() {
-    //logout function
+    localStorage.clear();
+    this.router.navigate(['/auth']);
   }
 
-  create() {
-    //go to create user page / open form.
+  profile() {
+    this.router.navigate(['/classification']);
   }
 }

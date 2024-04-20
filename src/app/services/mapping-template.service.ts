@@ -25,12 +25,12 @@ export class MappingTemplateService {
     return this.mappingTemplate;
   }
 
-  addMappingTemplate(mappingTemplateFile: IMappingTemplate) {
-    this.http.post(this.api + '/', mappingTemplateFile);
+  addMappingTemplate(mappingTemplate: IMappingTemplate) {
+    this.http.post(this.api + '/', mappingTemplate);
   }
 
-  updateMappingTemplate(id: number, mappingTemplateFile: IMappingTemplate) {
-    this.http.patch(this.api + '/', mappingTemplateFile);
+  updateMappingTemplate(id: number, mappingTemplate: IMappingTemplate) {
+    this.http.patch(this.api + '/' + id.toString(), mappingTemplate);
   }
 
   deleteMappingTemplate(id: number) {

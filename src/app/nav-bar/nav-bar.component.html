@@ -42,7 +42,9 @@
     </button>
     <mat-menu #menu="matMenu">
       <button mat-menu-item type="button" (click)="logout()">Logout</button>
-      <button mat-menu-item type="button" (click)="create()">Create</button>
+      <button *ngIf="user" mat-menu-item type="button" (click)="profile()">
+        {{ user.username }}
+      </button>
     </mat-menu>
   </div>
 </mat-toolbar>
