@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { CreateAttributeModalComponent } from 'src/app/create-attribute-modal/create-attribute-modal.component';
@@ -32,10 +32,12 @@ export class MappingSetupComponent {
       useCheckPrompt: [false, Validators.required],
     });
     this.mappingSetupForm.markAllAsTouched();
-    this.attributeService
-      .getAttribute()
-      .subscribe((data) => (this.attributes = data as IAttribute[]));
-    console.log(this.attributes);
+    let token = localStorage.getItem('token');
+    if (token) {
+      this.attributeService
+        .getAttributes()
+        .subscribe((data) => (this.attributes = data as IAttribute[]));
+    }
   }
   onSubmit() {}
 

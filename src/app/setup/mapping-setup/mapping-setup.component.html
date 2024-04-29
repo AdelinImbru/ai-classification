@@ -9,11 +9,7 @@
     </mat-form-field>
     <mat-form-field>
       <mat-label> Select the attributes that you want to map. </mat-label>
-      <mat-select
-        multiple
-        formControlName="attributes"
-        name="attributes"
-      >
+      <mat-select multiple formControlName="attributes" name="attributes">
         <mat-option *ngFor="let attribute of attributes" [value]="attribute">{{
           attribute.name
         }}</mat-option>

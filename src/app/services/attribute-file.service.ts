@@ -1,16 +1,16 @@
 import { Injectable } from '@angular/core';
 import { url } from '../environment';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
-enum Type {
-  'attributes',
-  'values',
+export enum Type {
+  attributes = 'ATTRIBUTES',
+  values = 'VALUES',
 }
 
 export interface IAttributeFile {
   name: string;
   type: Type;
-  user_id: number;
+  user: number;
   sample_file: File;
 }
 
@@ -18,25 +18,31 @@ export interface IAttributeFile {
   providedIn: 'root',
 })
 export class AttributeFileService {
-  api = url + 'attribute-file';
+  api = url.apiKey + 'attribute-file';
   attributeFile!: IAttributeFile[];
+  token = localStorage.getItem('token');
+  headers = new HttpHeaders({
+    Authorization: `Bearer ${this.token}`,
+  });
   constructor(private http: HttpClient) {}
-  getAttribute() {
+  getAttributeFile() {
     this.http
       .get(this.api)
       .subscribe((data) => (this.attributeFile = data as IAttributeFile[]));
     return this.attributeFile;
   }
 
-  addAttribute(attributeFile: IAttributeFile) {
-    this.http.post(this.api + '/', attributeFile);
+  addAttributeFile(attributeFile: FormData) {
+    return this.http.post(this.api + 's/', attributeFile, {
+      headers: this.headers,
+    });
   }
 
-  updateAttribute(id: number, attributeFile: IAttributeFile) {
-    this.http.patch(this.api + '/' + id.toString(), attributeFile);
+  updateAttributeFile(id: number, attributeFile: IAttributeFile) {
+    return this.http.patch(this.api + '/' + id.toString(), attributeFile);
   }
 
-  deleteAttribute(id: number) {
-    this.http.delete(this.api + '/' + id.toString());
+  deleteAttributeFile(id: number) {
+    return this.http.delete(this.api + '/' + id.toString());
   }
 }

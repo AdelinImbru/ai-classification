@@ -18,11 +18,16 @@ export class NavBarComponent implements OnInit {
   }
 
   logout() {
+    this.userService.blackListToken();
     localStorage.clear();
     this.router.navigate(['/auth']);
   }
 
+  login() {
+    this.router.navigate(['/auth']);
+  }
+
   profile() {
-    this.router.navigate(['/classification']);
+    this.router.navigate(['/profile']);
   }
 }

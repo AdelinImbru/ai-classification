@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { IAttribute } from './attribute.service';
 import { url } from '../environment';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 export interface IAttributeValues {
   name: string;
@@ -14,25 +14,29 @@ export interface IAttributeValues {
   providedIn: 'root',
 })
 export class AttributeValuesService {
-  api = url + 'attribute-value';
+  api = url.apiKey + 'attribute-value';
   attributeValues!: IAttributeValues[];
+  token = localStorage.getItem('token');
+  headers = new HttpHeaders({
+    Authorization: `Bearer ${this.token}`,
+  });
   constructor(private http: HttpClient) {}
-  getAttribute() {
+  getAttributeValues() {
     this.http
       .get(this.api)
       .subscribe((data) => (this.attributeValues = data as IAttributeValues[]));
     return this.attributeValues;
   }
 
-  addAttribute(attributeValues: IAttributeValues) {
-    this.http.post(this.api + '/', attributeValues);
+  addAttributeValues(attributeValues: IAttributeValues) {
+    return this.http.post(this.api + '/', attributeValues, { headers: this.headers });
   }
 
-  updateAttribute(id: number, attributeValues: IAttributeValues) {
-    this.http.patch(this.api + '/' + id.toString(), attributeValues);
+  updateAttributeValues(id: number, attributeValues: IAttributeValues) {
+    return this.http.patch(this.api + '/' + id.toString(), attributeValues);
   }
 
-  deleteAttribute(id: number) {
-    this.http.delete(this.api + '/' + id.toString());
+  deleteAttributeValues(id: number) {
+    return this.http.delete(this.api + '/' + id.toString());
   }
 }

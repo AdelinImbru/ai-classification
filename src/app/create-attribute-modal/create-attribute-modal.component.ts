@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AttributeService, IAttribute } from '../services/attribute.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { IUser } from '../services/user.service';
 
 @Component({
   selector: 'app-create-attribute-modal',
@@ -19,12 +20,18 @@ export class CreateAttributeModalComponent {
   attribute!: IAttribute;
   errorMessage: any;
   keys!: string[];
+  user!: IUser;
 
   ngOnInit(): void {
+    let user = localStorage.getItem('loggedUser');
+    if (user) {
+      this.user = JSON.parse(user);
+    }
     this.createAttributeForm = this.formBuilder.group({
       name: ['', Validators.required],
       description: [''],
       type: [''],
+      user: this.user.id,
     });
   }
   createAttribute() {

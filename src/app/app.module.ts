@@ -33,6 +33,7 @@ import { ProgressComponent } from './progress/progress.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { HttpClientModule } from '@angular/common/http';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     ClassificationComponent,
     DndDirective,
     ProgressComponent,
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,

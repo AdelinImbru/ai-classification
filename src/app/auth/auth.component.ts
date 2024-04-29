@@ -48,7 +48,7 @@ export class AuthComponent implements OnInit {
 
   async onSubmit(): Promise<void> {
     if (this.loginForm.valid) {
-      this.userService.login(this.loginForm.value as ILogin).subscribe({
+       this.userService.login(this.loginForm.value as ILogin).subscribe({
         next: (data) => {
           this.token = data as IToken;
         },
@@ -60,7 +60,7 @@ export class AuthComponent implements OnInit {
     }
     if (this.token) {
       this.userService
-        .getCurrentUser(this.token.access)
+        .getCurrentUser()
         .subscribe((data) => (localStorage.setItem('loggedUser', JSON.stringify(data))));
       localStorage.setItem('token', this.token.access);
       this.router.navigate(['/home']);

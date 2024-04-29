@@ -25,6 +25,7 @@
           name="attributesFile"
           accept=".json"
           required
+          (change)="handleFileInput($event)"
         />
       </button>
       <mat-error> Please select a json file. </mat-error>
@@ -53,6 +54,7 @@
         name="attributeValuesFile"
         accept=".json"
         [attr.required]="dbSetupForm.value['useAttributeValues']"
+        onchange="handleFileInput(event.target.files)"
       />
       <mat-error> Please choose a file </mat-error>
     </mat-form-field>
@@ -79,10 +81,19 @@
         name="memoryFile"
         accept=".json"
         [attr.required]="dbSetupForm.value['useMemory']"
+        onchange="handleFileInput(event.target.files)"
       />
       <mat-error> Please choose a file </mat-error>
     </mat-form-field>
-    <button mat-raised-button class="button" (click)="onSubmit()">
+    <mat-form-field *ngIf="dbSetupForm.value['useMemory']">
+      <mat-label> Field of activity for memory file</mat-label>
+
+      <input matInput formControlName="domain" name="domain" required />
+      <mat-error>
+        Please provide a field of activity for the memory file
+      </mat-error>
+    </mat-form-field>
+    <button mat-raised-button class="button" type="submit" (click)="onSubmit()">
       Submit
     </button>
   </form>

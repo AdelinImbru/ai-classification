@@ -31,8 +31,14 @@
     </p>
   </div>
   <a class="link" routerLink="/home" routerLinkActive="active">Home</a>
-  <a class="link" routerLink="/dbsetup" routerLinkActive="active">Setup</a>
-  <a class="link" routerLink="/classification" routerLinkActive="active"
+  <a class="link" routerLink="/dbsetup" routerLinkActive="active" *ngIf="user"
+    >Setup</a
+  >
+  <a
+    class="link"
+    routerLink="/classification"
+    routerLinkActive="active"
+    *ngIf="user"
     >Classification</a
   >
 
@@ -41,9 +47,14 @@
       <mat-icon style="color: whitesmoke">menu</mat-icon>
     </button>
     <mat-menu #menu="matMenu">
-      <button mat-menu-item type="button" (click)="logout()">Logout</button>
-      <button *ngIf="user" mat-menu-item type="button" (click)="profile()">
+      <button mat-menu-item type="button" (click)="logout()" *ngIf="user">
+        Logout
+      </button>
+      <button mat-menu-item type="button" (click)="profile()" *ngIf="user">
         {{ user.username }}
+      </button>
+      <button mat-menu-item type="button" (click)="login()" *ngIf="!user">
+        Login
       </button>
     </mat-menu>
   </div>

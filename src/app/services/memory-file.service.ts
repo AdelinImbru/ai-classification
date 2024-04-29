@@ -1,11 +1,11 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { url } from '../environment';
 
 export interface IMemoryFile {
   name: string;
-  memoryFile: File;
-  user_id: number;
+  memory_file: File;
+  user: number;
   field_of_activity: string;
 }
 
@@ -13,8 +13,12 @@ export interface IMemoryFile {
   providedIn: 'root',
 })
 export class MemoryFileService {
-  api = url + 'memory-file';
+  api = url.apiKey + 'memory-file';
   memoryFile!: IMemoryFile[];
+  token = localStorage.getItem('token');
+  headers = new HttpHeaders({
+    Authorization: `Bearer ${this.token}`,
+  });
   constructor(private http: HttpClient) {}
   getMemoryFile() {
     this.http
@@ -24,14 +28,14 @@ export class MemoryFileService {
   }
 
   addMemoryFile(memoryFile: IMemoryFile) {
-    this.http.post(this.api + '/', memoryFile);
+    return this.http.post(this.api + '/', memoryFile, { headers: this.headers });
   }
 
   updateMemoryFile(id: number, memoryFile: IMemoryFile) {
-    this.http.patch(this.api + '/' + id.toString(), memoryFile);
+    return this.http.patch(this.api + '/' + id.toString(), memoryFile);
   }
 
   deleteMemoryFile(id: number) {
-    this.http.delete(this.api + '/' + id.toString());
+    return this.http.delete(this.api + '/' + id.toString());
   }
 }

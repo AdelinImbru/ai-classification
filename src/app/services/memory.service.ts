@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { url } from '../environment';
 
@@ -13,8 +13,12 @@ export interface IMemory {
   providedIn: 'root',
 })
 export class MemoryService {
-  api = url + 'memory';
+  api = url.apiKey + 'memory';
   memory!: IMemory[];
+  token = localStorage.getItem('token');
+  headers = new HttpHeaders({
+    Authorization: `Bearer ${this.token}`,
+  });
   constructor(private http: HttpClient) {}
   getMemory() {
     this.http
@@ -24,14 +28,14 @@ export class MemoryService {
   }
 
   addMemory(memory: IMemory) {
-    this.http.post(this.api + '/', memory);
+    return this.http.post(this.api + '/', memory, { headers: this.headers });
   }
 
   updateMemory(id: number, memory: IMemory) {
-    this.http.patch(this.api + '/' + id.toString(), memory);
+    return this.http.patch(this.api + '/' + id.toString(), memory);
   }
 
   deleteMemory(id: number) {
-    this.http.delete(this.api + '/' + id.toString());
+    return this.http.delete(this.api + '/' + id.toString());
   }
 }
