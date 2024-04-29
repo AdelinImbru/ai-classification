@@ -1,0 +1,51 @@
+<div class="wrapper">
+  <div class="header">
+    <h1>Profile</h1>
+    <button class="btn-class-name" (click)="editable()">
+      <span class="back"></span>
+      <span class="front">Edit</span>
+    </button>
+  </div>
+  <div *ngIf="this.errorMessage">
+    <div *ngFor="let key of this.keys">
+      <p style="color: red; margin-top: 1rem">
+        {{ this.errorMessage[key] }}
+      </p>
+    </div>
+  </div>
+
+  <form [formGroup]="profileForm">
+    <mat-form-field>
+      <label> Username </label>
+      <input matInput formControlName="username" name="username" required />
+      <mat-error> The username is already taken. </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <label> First Name </label>
+      <input matInput formControlName="first_name" name="first_name" />
+    </mat-form-field>
+    <mat-form-field>
+      <label> Last Name </label>
+      <input matInput formControlName="last_name" name="last_name" />
+    </mat-form-field>
+    <mat-form-field>
+      <label> Email </label>
+      <input matInput formControlName="email" name="email" />
+    </mat-form-field>
+    <mat-form-field>
+      <label> Groups </label>
+      <input matInput formControlName="groups" name="groups" />
+    </mat-form-field>
+    <mat-form-field>
+      <label> Permissions </label>
+      <input
+        matInput
+        formControlName="user_permissions"
+        name="user_permissions"
+      />
+    </mat-form-field>
+  </form>
+  <button mat-button *ngIf="this.editable" (click)="save()">
+    Save changes
+  </button>
+</div>
