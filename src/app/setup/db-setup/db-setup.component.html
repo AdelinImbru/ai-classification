@@ -25,7 +25,7 @@
           name="attributesFile"
           accept=".json"
           required
-          (change)="handleFileInput($event)"
+          (change)="handleFileInput($event, 'attribute')"
         />
       </button>
       <mat-error> Please select a json file. </mat-error>
@@ -54,8 +54,8 @@
         name="attributeValuesFile"
         accept=".json"
         [attr.required]="dbSetupForm.value['useAttributeValues']"
-        onchange="handleFileInput(event.target.files)"
-      />
+        (change)="handleFileInput($event, 'value')"
+        />
       <mat-error> Please choose a file </mat-error>
     </mat-form-field>
     <div class="d-flex">
@@ -81,8 +81,8 @@
         name="memoryFile"
         accept=".json"
         [attr.required]="dbSetupForm.value['useMemory']"
-        onchange="handleFileInput(event.target.files)"
-      />
+        (change)="handleFileInput($event, 'memory')"
+        />
       <mat-error> Please choose a file </mat-error>
     </mat-form-field>
     <mat-form-field *ngIf="dbSetupForm.value['useMemory']">

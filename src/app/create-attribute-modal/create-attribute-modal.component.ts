@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AttributeService, IAttribute } from '../services/attribute.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { IUser } from '../services/user.service';
+import { IUser, UserService } from '../services/user.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-create-attribute-modal',
@@ -13,7 +14,8 @@ export class CreateAttributeModalComponent {
   constructor(
     private formBuilder: FormBuilder,
     private attributeService: AttributeService,
-    private _snackBar: MatSnackBar
+    private _snackBar: MatSnackBar,
+    private userService: UserService
   ) {}
 
   createAttributeForm!: FormGroup;
@@ -23,9 +25,12 @@ export class CreateAttributeModalComponent {
   user!: IUser;
 
   ngOnInit(): void {
-    let user = localStorage.getItem('loggedUser');
-    if (user) {
-      this.user = JSON.parse(user);
+    this.userService.user.subscribe(data=>this.user=data as IUser);
+    if(!this.user){
+      let usr = localStorage.getItem('loggedUser')
+      if(this.userService.verifyToken() && usr){
+        this.user=JSON.parse(usr) as IUser
+      }
     }
     this.createAttributeForm = this.formBuilder.group({
       name: ['', Validators.required],

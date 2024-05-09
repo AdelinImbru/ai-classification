@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IUser, UserService } from '../services/user.service';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-profile',
@@ -18,9 +19,12 @@ export class ProfileComponent implements OnInit {
     private userService: UserService
   ) {}
   ngOnInit() {
-    let user = localStorage.getItem('loggedUser');
-    if (user) {
-      this.user = JSON.parse(user);
+    this.userService.user.subscribe(data=>this.user=data as IUser);
+    if(!this.user){
+      let usr = localStorage.getItem('loggedUser')
+      if(this.userService.verifyToken() && usr){
+        this.user=JSON.parse(usr) as IUser
+      }
     }
     this.profileForm = this.formBuilder.group({
       username: new FormControl({
@@ -63,8 +67,6 @@ export class ProfileComponent implements OnInit {
         .subscribe({
           next: (data) => {
             this.user = data as IUser;
-            localStorage.removeItem('loggedUser');
-            localStorage.setItem('loggedUser', JSON.stringify(this.user));
           },
           error: (error) => {
             this.errorMessage = error.error;

@@ -2,9 +2,9 @@
   <form [formGroup]="mappingSetupForm">
     <h2>Mapping Setup</h2>
     <mat-form-field>
-      <mat-label> Domain </mat-label>
+      <mat-label> Field of activity </mat-label>
 
-      <input matInput formControlName="domain" name="domain" required />
+      <input matInput formControlName="field_of_activity" name="field_of_activity" required />
       <mat-error> Please provide a domain for the classification </mat-error>
     </mat-form-field>
     <mat-form-field>
@@ -28,37 +28,45 @@
       >
       <input
         matInput
-        formControlName="numberOfAttributeValuesRetrieved"
-        name="numberOfAttributeValuesRetrieved"
+        formControlName="number_of_attribute_values"
+        name="number_of_attribute_values"
         type="number"
         min="1"
         max="50"
-        id="numberOfAttributeValuesRetrieved"
+        id="number_of_attribute_values"
         required
       />
       <mat-error>
         Please provide the number of values retrieved for each attribute.
       </mat-error>
     </mat-form-field>
-    <div class="d-flex">
-      <mat-slide-toggle formControlName="mappingTemplate"></mat-slide-toggle>
+    <!-- <div class="d-flex">
+      <mat-slide-toggle formControlName="mapping_template"></mat-slide-toggle>
       <p style="color: whitesmoke">Use mapping templates</p>
-    </div>
+    </div> -->
+    <mat-form-field>
+      <mat-label> Select the mapping template that you want to use. </mat-label>
+      <mat-select formControlName="mapping_template" name="mapping_template">
+        <mat-option *ngFor="let template of templates" [value]="template.id">{{
+          template.name
+        }}</mat-option>
+      </mat-select>
+    </mat-form-field>
 
     <div class="d-flex">
-      <mat-slide-toggle formControlName="useDescriptions"></mat-slide-toggle>
+      <mat-slide-toggle formControlName="use_descriptions"></mat-slide-toggle>
       <p style="color: whitesmoke">Use descriptions for attributes</p>
     </div>
     <mat-form-field>
       <mat-label>Number of values retrieved from memory</mat-label>
       <input
         matInput
-        formControlName="numberOfMemoryValuesRetrieved"
-        name="numberOfMemoryValuesRetrieved"
+        formControlName="number_of_memory_values"
+        name="number_of_memory_values"
         type="number"
         min="1"
         max="50"
-        id="numberOfMemoryValuesRetrieved"
+        id="number_of_memory_values"
         (keyup.enter)="onSubmit()"
         required
       />
@@ -67,9 +75,9 @@
       </mat-error>
     </mat-form-field>
     <div class="d-flex">
-      <mat-slide-toggle formControlName="useCheckPrompt"></mat-slide-toggle>
+      <mat-slide-toggle formControlName="use_check_prompt"></mat-slide-toggle>
       <p style="color: whitesmoke">Use Check Prompt</p>
     </div>
-    <button mat-raised-button (click)="onSubmit()">Submit</button>
+    <button mat-raised-button type="submit" (click)="onSubmit()">Submit</button>
   </form>
 </div>

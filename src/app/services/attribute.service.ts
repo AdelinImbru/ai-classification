@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { url } from '../environment';
 
 export interface IAttribute {
+  id: string;
   name: string;
   description: string;
   type: string;

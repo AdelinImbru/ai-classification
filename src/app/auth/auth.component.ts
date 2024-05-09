@@ -4,10 +4,10 @@ import { Router } from '@angular/router';
 import {
   ILogin,
   IRegister,
-  IToken,
   IUser,
   UserService,
 } from '../services/user.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-auth',
@@ -19,8 +19,8 @@ export class AuthComponent implements OnInit {
   loginForm!: FormGroup;
   registerForm!: FormGroup;
   formValid = true;
-  loggedUser!: IUser;
-  token!: IToken;
+  loggedUser!: Observable<IUser | null>;
+  token: string = '';
   user!: IUser;
   keys!: string[];
   hide = true;
@@ -44,13 +44,14 @@ export class AuthComponent implements OnInit {
       first_name: ['', Validators.required],
       last_name: ['', Validators.required],
     });
+    this.loggedUser = this.userService.user
   }
 
-  async onSubmit(): Promise<void> {
-    if (this.loginForm.valid) {
+  onSubmit() {
+      if (this.loginForm.valid) {
        this.userService.login(this.loginForm.value as ILogin).subscribe({
         next: (data) => {
-          this.token = data as IToken;
+          this.token = data.access;
         },
         error: (error) => {
           this.errorMessage = error.error;
@@ -58,18 +59,16 @@ export class AuthComponent implements OnInit {
         },
       });
     }
-    if (this.token) {
-      this.userService
-        .getCurrentUser()
-        .subscribe((data) => (localStorage.setItem('loggedUser', JSON.stringify(data))));
-      localStorage.setItem('token', this.token.access);
-      this.router.navigate(['/home']);
-    } else {
-      this.formValid = false;
+    if(this.errorMessage){
+      this.formValid = false; 
     }
+     else {
+      this.router.navigate(['/home'])
+         }
   }
+  
 
-  async onRegister(): Promise<void> {
+   onRegister() {
     if (this.registerForm.valid) {
       this.userService
         .register(this.registerForm.value as IRegister)
@@ -87,7 +86,7 @@ export class AuthComponent implements OnInit {
           })
           .subscribe({
             next: (data) => {
-              this.token = data as IToken;
+              this.token = data.access;
             },
             error: (error) => {
               this.errorMessage.append(error.error);
@@ -97,7 +96,7 @@ export class AuthComponent implements OnInit {
       }
     }
     if (this.token) {
-      localStorage.setItem('token', this.token.access);
+      localStorage.setItem('token', this.token);
       this.router.navigate(['/home']);
     } else {
       this.formValid = false;

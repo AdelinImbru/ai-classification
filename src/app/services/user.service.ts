@@ -4,6 +4,10 @@ import {
   HttpClient,
   HttpHeaders,
 } from '@angular/common/http';
+import { BehaviorSubject, Observable, map } from 'rxjs';
+import { Router } from '@angular/router';
+import { IAttribute } from './attribute.service';
+import { IMappingTemplate } from './mapping-template.service';
 
 
 export interface IRegister {
@@ -45,29 +49,59 @@ export interface IUser {
 export interface IToken {
   access: string;
   refresh: string;
+  user: IUser;
+}
+
+export interface IMappingSetup{
+  user: number;
+  field_of_activity: string;
+  attributes: IAttribute[];
+  number_of_attribute_values: number;
+  mapping_template: IMappingTemplate;
+  use_descriptions: boolean;
+  number_of_memory_values: number;
+  use_check_prompts: boolean;
 }
 
 @Injectable({
   providedIn: 'root',
 })
 export class UserService {
+  private userSubject: BehaviorSubject<IUser | null>;
+  public user: Observable<IUser | null>;
   api = url.apiKey;
-  user!: IUser;
-  token = localStorage.getItem('token');
+  token!: string;
   registeredUser!: IRegisteredUser;
   errorMessage: any;
-  headers = new HttpHeaders({
-    'Content-Type': 'application/json',
-    Authorization: `Bearer ${this.token}`,
+  headers: HttpHeaders = new HttpHeaders({
+    Authorization: `Bearer ${localStorage.getItem('token')}`,
   });
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private router: Router) {
+    this.userSubject = new BehaviorSubject(JSON.parse(localStorage.getItem('user')!));
+    this.user = this.userSubject.asObservable();
+  }
   register(user: IRegister) {
     return this.http.post(this.api + 'register/', user);
   }
 
-  login(user: ILogin) {
-    return this.http.post(this.api + 'token/', user);
+  login(user: ILogin): Observable<IToken>{
+    return this.http.post<IToken>(this.api + 'token/', user).pipe(map(token => {
+      this.userSubject.next(token.user)
+      localStorage.setItem('token', token.access);
+      localStorage.setItem('loggedUser', JSON.stringify(token.user))
+      this.token=token.access
+      this.headers = new HttpHeaders({
+        Authorization: `Bearer ${token.access}`,
+      });
+      return token;
+  }));
+  }
+
+  logout(){
+    this.userSubject.next(null)
+    localStorage.clear()
+    return this.http.post(this.api + 'token/blacklist/', this.token);
   }
 
   refreshToken(refresh: string) {
@@ -82,16 +116,21 @@ export class UserService {
     return this.http.post(this.api + 'token/blacklist/', this.token);
   }
 
-  getCurrentUser() {
-    return this.http.get(this.api + 'profile', { headers: this.headers });
+  getCurrentUser(): Observable<IUser>  {
+    return this.http.get<IUser>(this.api + 'profile', { headers: this.headers }).pipe(map(usr => {
+      localStorage.removeItem('loggedUser')
+      localStorage.setItem('loggedUser', JSON.stringify(usr))
+      this.userSubject.next(usr)
+      return usr
+    }));
   }
 
   getUserById(id: number) {
     return this.http.get(this.api + 'user/' + id.toString());
   }
 
-  updateUser(user: IUser, token: string) {
-    return this.http.put(this.api + 'profile/update/', user, {
+  updateUser(user: IUser, token: string): Observable<IUser>{
+    return this.http.put<IUser>(this.api + 'profile/update/', user, {
       headers: this.headers,
     });
   }
@@ -102,5 +141,9 @@ export class UserService {
 
   getUsers() {
     return this.http.get(this.api + 'users');
+  }
+
+  setMappingSetup(mappingSetup: IMappingSetup){
+    return this.http.post(this.api + 'mapping-setup/', mappingSetup, {headers: this.headers})
   }
 }

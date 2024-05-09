@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { url } from '../environment';
+import { Observable } from 'rxjs';
 
 export interface IMemoryFile {
   name: string;
@@ -27,8 +28,8 @@ export class MemoryFileService {
     return this.memoryFile;
   }
 
-  addMemoryFile(memoryFile: IMemoryFile) {
-    return this.http.post(this.api + '/', memoryFile, { headers: this.headers });
+  addMemoryFile(memoryFile: FormData): Observable<IMemoryFile> {
+    return this.http.post<IMemoryFile>(this.api + 's/', memoryFile, { headers: this.headers });
   }
 
   updateMemoryFile(id: number, memoryFile: IMemoryFile) {

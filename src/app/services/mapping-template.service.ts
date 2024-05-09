@@ -4,11 +4,11 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { IAttribute } from '../services/attribute.service';
 
 export interface IMappingTemplate {
+  id: string;
   name: string;
   description: string;
   field_of_activity: string;
-  user_id: number;
-  attributes: IAttribute[];
+  user: number;
 }
 
 @Injectable({
@@ -23,13 +23,10 @@ export class MappingTemplateService {
   });
   constructor(private http: HttpClient) {}
   getMappingTemplate() {
-    this.http
-      .get(this.api)
-      .subscribe((data) => (this.mappingTemplate = data as IMappingTemplate[]));
-    return this.mappingTemplate;
+    return this.http.get(this.api, { headers: this.headers })
   }
 
-  addMappingTemplate(mappingTemplate: IMappingTemplate) {
+  addMappingTemplate(mappingTemplate:any) {
     return this.http.post(this.api + '/', mappingTemplate, { headers: this.headers });
   }
 

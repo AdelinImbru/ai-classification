@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
 import { url } from '../environment';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 export enum Type {
   attributes = 'ATTRIBUTES',
-  values = 'VALUES',
+  values = 'ATTRIBUTE_VALUES',
 }
 
 export interface IAttributeFile {
@@ -32,8 +33,8 @@ export class AttributeFileService {
     return this.attributeFile;
   }
 
-  addAttributeFile(attributeFile: FormData) {
-    return this.http.post(this.api + 's/', attributeFile, {
+  addAttributeFile(attributeFile: FormData): Observable<IAttributeFile> {
+    return this.http.post<IAttributeFile>(this.api + 's/', attributeFile, {
       headers: this.headers,
     });
   }
