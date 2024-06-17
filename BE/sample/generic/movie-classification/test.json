@@ -1,0 +1,182 @@
+[
+  {
+    "api_input": {
+      "field_of_activity": "movie classification",
+      "attribute": [
+        "movie_genres"
+      ],
+      "input": "Title: Madame Web. Plot: In a switch from the typical genre, Madame Web tells the standalone origin story of one of Marvel publishing's most enigmatic heroines. The suspense-driven thriller stars Dakota Johnson as Cassandra Webb, a paramedic in Manhattan who develops the power to see the future... and realizes she can use that insight to change it. Forced to confront revelations about her past, she forges a relationship with three young women bound for powerful destinies...if they can all survive a deadly present"
+    },
+    "human_mapped_output": {
+      "movie_genres": ["Thriller"]
+    }
+  },
+  {
+    "api_input": {
+      "field_of_activity": "movie classification",
+      "attribute": [
+        "movie_genres"
+      ],
+      "input": "Title: Land of Bad. Plot: An Army Special Forces team ambushed and their hope lies with Air Force personnel who guide them through a brutal 48-hour battle."
+    },
+    "human_mapped_output": {
+      "movie_genres": ["Action", "War"]
+    }
+  },
+  {
+    "api_input": {
+      "field_of_activity": "movie classification",
+      "attribute": [
+        "movie_genres"
+      ],
+      "input": "Title: The Beekeeper. Plot: Adam Clay is a beekeeper, but someone very important to him is scammed and driven to harm. However, what these power and money hungry scammers don't know, is that Clay is an agent in a classified program called Beekeepers, and they underestimate how much of a threat he is. Adam sets out on a quest of vengeance, where he hunts and kills those responsible for the incident."
+    },
+    "human_mapped_output": {
+      "movie_genres": ["Action", "Thriller"]
+    }
+  },
+  {
+    "api_input": {
+      "field_of_activity": "movie classification",
+      "attribute": [
+        "movie_genres"
+      ],
+      "input": "Title: Argylle. Plot: A reclusive author who writes espionage novels about a secret agent and a global spy syndicate realizes the plot of the new book she's writing starts to mirror real-world events, in real time."
+    },
+    "human_mapped_output": {
+      "movie_genres": ["Action", "Thriller", "Mystery"]
+    }
+  },
+  {
+    "api_input": {
+      "field_of_activity": "movie classification",
+      "attribute": [
+        "movie_genres"
+      ],
+      "input": "Title: Girl. Plot: A promising teenage dancer enrolls at a prestigious ballet school while grappling with her gender dysphoria."
+    },
+    "human_mapped_output": {
+      "movie_genres": ["Drama"]
+    }
+  },
+  {
+    "api_input": {
+      "field_of_activity": "movie classification",
+      "attribute": [
+        "movie_genres"
+      ],
+      "input": "Title: Close. Plot: The intense friendship between two thirteen-year old boys Leo and Remi suddenly gets disrupted. Struggling to understand what has happened, Léo approaches Sophie, Rémi's mother. \"Close\" is a film about friendship and responsibility."
+    },
+    "human_mapped_output": {
+      "movie_genres": ["Drama"]
+    }
+  },
+  {
+    "api_input": {
+      "field_of_activity": "movie classification",
+      "attribute": [
+        "movie_genres"
+      ],
+      "input": "Title: Aftersun. Plot: Sophie reflects on the shared joy and private melancholy of a holiday she took with her father twenty years earlier. Memories real and imagined fill the gaps between as she tries to reconcile the father she knew with the man she didn't..."
+    },
+    "human_mapped_output": {
+      "movie_genres": ["Drama"]
+    }
+  },
+  {
+    "api_input": {
+      "field_of_activity": "movie classification",
+      "attribute": [
+        "movie_genres"
+      ],
+      "input": "Title: All of Us Strangers. Plot: A screenwriter drawn back to his childhood home enters into a fledgling relationship with his downstairs neighbor while discovering a mysterious new way to heal from losing his parents 30 years ago."
+    },
+    "human_mapped_output": {
+      "movie_genres": ["Drama", "Romance"]
+    }
+  },
+  {
+    "api_input": {
+      "field_of_activity": "movie classification",
+      "attribute": [
+        "movie_genres"
+      ],
+      "input": "Title: The Zone of Interest. Plot: Auschwitz commandant Rudolf Höss and his wife Hedwig strive to build a dream life for their family in a house and garden beside the camp."
+    },
+    "human_mapped_output": {
+      "movie_genres": ["Drama", "History", "War"]
+    }
+  },
+  {
+    "api_input": {
+      "field_of_activity": "movie classification",
+      "attribute": [
+        "movie_genres"
+      ],
+      "input": "Title: Past Lives. Plot: Nora and Hae Sung, two deeply connected childhood friends, are wrested apart after Nora's family emigrates from South Korea. Twenty years later, they are reunited for one fateful week as they confront notions of love and destiny."
+    },
+    "human_mapped_output": {
+      "movie_genres": ["Drama", "Romance"]
+    }
+  },
+  {
+    "api_input": {
+      "field_of_activity": "movie classification",
+      "attribute": [
+        "movie_genres"
+      ],
+      "input": "Title: American Fiction. Plot: A novelist who's fed up with the establishment profiting from Black entertainment uses a pen name to write a book that propels him into the heart of the hypocrisy and madness he claims to disdain."
+    },
+    "human_mapped_output": {
+      "movie_genres": ["Comedy", "Drama"]
+    }
+  },
+  {
+    "api_input": {
+      "field_of_activity": "movie classification",
+      "attribute": [
+        "movie_genres"
+      ],
+      "input": "Title: The Holdovers. Plot: A cranky history teacher at a remote prep school is forced to remain on campus over the holidays with a grieving cook and a troubled student who has no place to go."
+    },
+    "human_mapped_output": {
+      "movie_genres": ["Comedy", "Drama"]
+    }
+  },
+  {
+    "api_input": {
+      "field_of_activity": "movie classification",
+      "attribute": [
+        "movie_genres"
+      ],
+      "input": "Title: Interstellar. Plot: When Earth becomes uninhabitable in the future, a farmer and ex-NASA pilot, Joseph Cooper, is tasked to pilot a spacecraft, along with a team of researchers, to find a new planet for humans."
+    },
+    "human_mapped_output": {
+      "movie_genres": ["Adventure", "Drama", "Science Fiction (Sci-Fi)"]
+    }
+  },
+  {
+    "api_input": {
+      "field_of_activity": "movie classification",
+      "attribute": [
+        "movie_genres"
+      ],
+      "input": "Title: Oppenheimer. Plot: The story of American scientist J. Robert Oppenheimer and his role in the development of the atomic bomb."
+    },
+    "human_mapped_output": {
+      "movie_genres": ["Biography", "Drama", "History"]
+    }
+  },
+  {
+    "api_input": {
+      "field_of_activity": "movie classification",
+      "attribute": [
+        "movie_genres"
+      ],
+      "input": "Title: Killers of the Flower Moon. Plot: When oil is discovered in 1920s Oklahoma under Osage Nation land, the Osage people are murdered one by one - until the FBI steps in to unravel the mystery."
+    },
+    "human_mapped_output": {
+      "movie_genres": ["Crime", "Drama", "History"]
+    }
+  }
+]

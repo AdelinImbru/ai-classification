@@ -1,0 +1,67 @@
+[
+  {
+    "name": "persons",
+    "description": "Persons specified in text",
+    "type": "string[]"
+  },
+  {
+    "name": "locations",
+    "description": "Locations specified in text",
+    "type": "string[]"
+  },
+  {
+    "name": "organizations",
+    "description": "Organizations specified in text",
+    "type": "string[]"
+  },
+  {
+    "name": "dates",
+    "description": "Dates specified in text",
+    "type": "string[]"
+  },
+  {
+    "name": "percentages",
+    "description": "Percentage specified in text",
+    "type": "string[]"
+  },
+  {
+    "name": "Money",
+    "description": "Money specified in text",
+    "type": "string[]"
+  },
+  {
+    "name": "ordinals",
+    "description": "Ordinal numbers specified in text",
+    "type": "string[]"
+  },
+  {
+    "name": "cardinals",
+    "description": "Cardinal numbers specified in text",
+    "type": "string[]"
+  },
+  {
+    "name": "products",
+    "description": "Products specified in text",
+    "type": "string[]"
+  },
+  {
+    "name": "events",
+    "description": "Events specified in text",
+    "type": "string[]"
+  },
+  {
+    "name": "work_of_arts",
+    "description": "Work of arts specified in text",
+    "type": "string[]"
+  },
+  {
+    "name": "languages",
+    "description": "Languages used in text",
+    "type": "string[]"
+  },
+  {
+    "name": "quantities",
+    "description": "Quantities specified in text",
+    "type": "string[]"
+  }
+]

@@ -1,0 +1,7 @@
+[
+  {
+    "name": "email_category",
+    "description": "The category of email",
+    "type": "string"
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "title": "Skilled worker",
+    "description": "A skilled worker is an individual who possesses a specific set of abilities, expertise, and technical knowledge in a particular occupation or trade. Skilled workers typically have received training, either through formal education or on-the-job experience, that enables them to perform tasks that require specialized skills.",
+    "attribute": "qualification"
+  },
+  {
+    "id": 2,
+    "title": "Professional",
+    "description": "A \"specialist\" is a person who has specific knowledge and skills in a particular field or profession, often acquired through formal training or years of experience in an organization or institution. Job advertisements might contain phrases such as \"Looking for a specialist in the field of XYZ\", \"Qualified specialist wanted\", \"Professional experience as a specialist desired\", \"Completed training\" or \"Professional experience\".",
+    "attribute": "qualification"
+  },
+  {
+    "id": 3,
+    "title": "Leadership",
+    "description": "A \"leader\" is someone who has responsibility for a team, a department or even an entire company, makes decisions and pursues strategic goals. Job advertisements could contain phrases such as \"Looking for an experienced manager\", \"Position as Department manager, \"position as operations manager\", \"professional experience as a manager\" or \"position in XYZ area\".",
+    "attribute": "qualification"
+  },
+  {
+    "id": 4,
+    "title": "Student/Intern",
+    "description": "\"Student/Intern\" refers to people who are still in an educational phase or who would like to gain practical experience in a specific area. Job advertisements could contain phrases such as \"Looking for students for part-time job\", \"Student help wanted\" or \"Internship position available in area XYZ\".",
+    "attribute": "qualification"
+  }
+]

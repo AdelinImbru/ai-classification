@@ -1,0 +1,386 @@
+[
+  {
+    "api_input": {
+      "field_of_activity": "email center",
+      "attribute": [
+        "email_category"
+      ],
+      "input": "Dear Sales Team. I am interested in learning more about your AIClassificationApp. Could you provide additional information regarding features, pricing, and any ongoing promotions? Thank you in advance for your assistance"
+    },
+    "human_mapped_output": {
+      "email_category": "Inquiry"
+    }
+  },
+  {
+    "api_input": {
+      "field_of_activity": "email center",
+      "attribute": [
+        "email_category"
+      ],
+      "input": "Hi,I hope this email finds you well. I am writing to inquire about the specifications of your latest product. Could you please provide detailed information regarding its features and compatibility? Thank you"
+    },
+    "human_mapped_output": {
+      "email_category": "Inquiry"
+    }
+  },
+  {
+    "api_input": {
+      "field_of_activity": "email center",
+      "attribute": [
+        "email_category"
+      ],
+      "input": "Dear HR, I hope this email finds you well. I came across the Testing position opening at your company and am interested in applying. Could you please provide details regarding the application process, required qualifications, and any upcoming interview schedules? Thank you for your time"
+    },
+    "human_mapped_output": {
+      "email_category": "Job Application"
+    }
+  },
+  {
+    "api_input": {
+      "field_of_activity": "email center",
+      "attribute": [
+        "email_category"
+      ],
+      "input": "Dear Testing.com, I am considering utilizing your testing services for my business and would like more information about the service features, pricing plans, and any additional support provided. Can you please guide me on the next steps? Thank you"
+    },
+    "human_mapped_output": {
+      "email_category": "Inquiry"
+    }
+  },
+  {
+    "api_input": {
+      "field_of_activity": "email center",
+      "attribute": [
+        "email_category"
+      ],
+      "input": "Hi, I am interested in attending the upcoming Hack-a-robot and would like more details regarding the schedule, speakers, and registration process. Could you please provide me with the necessary information? Thank you, and I look forward to your response"
+    },
+    "human_mapped_output": {
+      "email_category": "Inquiry"
+    }
+  },
+  {
+    "api_input": {
+      "field_of_activity": "email center",
+      "attribute": [
+        "email_category"
+      ],
+      "input": "Subject: Exploring Partnership Opportunities, Message: Hello Team, I am reaching out to discuss potential partnership opportunities between our companies. I believe that a collaboration could be mutually beneficial. Are there representatives available for a meeting to explore this further? Looking forward to your response."
+    },
+    "human_mapped_output": {
+      "email_category": "Collaboration/Partnership"
+    }
+  },
+  {
+    "api_input": {
+      "field_of_activity": "email center",
+      "attribute": [
+        "email_category"
+      ],
+      "input": "Dear Team,\nI have been a long-time user of your services and wanted to share a few suggestions for improvement. I believe implementing these changes could enhance the user experience significantly. Please consider the following points...\nBest regards,"
+    },
+    "human_mapped_output": {
+      "email_category": "Suggestion"
+    }
+  },
+  {
+    "api_input": {
+      "field_of_activity": "email center",
+      "attribute": [
+        "email_category"
+      ],
+      "input": "Hi Team Member, We're always looking for ways to improve our internal processes. If you have any suggestions on how we can streamline workflows or enhance collaboration, please share your insights. Your expertise is invaluable in making our operations more efficient."
+    },
+    "human_mapped_output": {
+      "email_category": "Suggestion"
+    }
+  },
+  {
+    "api_input": {
+      "field_of_activity": "email center",
+      "attribute": [
+        "email_category"
+      ],
+      "input": "Hello Community Member, We're planning our upcoming event and would love to hear your suggestions! Whether it's guest speakers, topics, or activities, your input is valuable in creating an event that resonates with our community. Share your ideas and help us make it an unforgettable experience"
+    },
+    "human_mapped_output": {
+      "email_category": "Suggestion"
+    }
+  },
+  {
+    "api_input": {
+      "field_of_activity": "email center",
+      "attribute": [
+        "email_category"
+      ],
+      "input": "Dear Subscriber, We want to tailor our content to your interests. If there are specific topics or themes you'd like us to cover in our upcoming blog posts or newsletters, please share your suggestions. Your feedback guides our content creation to better serve your preferences. "
+    },
+    "human_mapped_output": {
+      "email_category": "Suggestion"
+    }
+  },
+  {
+    "api_input": {
+      "field_of_activity": "email center",
+      "attribute": [
+        "email_category"
+      ],
+      "input": "Hi, We're committed to providing the best online experience. If you have any feedback or suggestions regarding our website's usability, design, or functionality, we'd love to hear from you. Your input helps us create a better browsing experience for everyone"
+    },
+    "human_mapped_output": {
+      "email_category": "Suggestion"
+    }
+  },
+  {
+    "api_input": {
+      "field_of_activity": "email center",
+      "attribute": [
+        "email_category"
+      ],
+      "input": "Hello, We value your opinion! We're constantly working to improve our products and services. If you have any suggestions or feedback on how we can enhance your experience, please share them with us. Your insights are crucial in shaping our future developments"
+    },
+    "human_mapped_output": {
+      "email_category": "Suggestion"
+    }
+  },
+  {
+    "api_input": {
+      "field_of_activity": "email center",
+      "attribute": [
+        "email_category"
+      ],
+      "input": "Hello, Thank you for choosing us for your team building. Your reservation for 10th of March has been confirmed. We're excited to welcome you. If there are any changes or if you have special requests, feel free to let us know. See you soon!"
+    },
+    "human_mapped_output": {
+      "email_category": "Appointment/Reservation"
+    }
+  },
+  {
+    "api_input": {
+      "field_of_activity": "email center",
+      "attribute": [
+        "email_category"
+      ],
+      "input": "Hi, This is a friendly reminder of your upcoming appointment scheduled for tomorrow at 10:00 o'clock. We appreciate your business and look forward to serving you. If you need to make any changes, please notify us in advance. Thank you."
+    },
+    "human_mapped_output": {
+      "email_category": "Appointment/Reservation"
+    }
+  },
+  {
+    "api_input": {
+      "field_of_activity": "email center",
+      "attribute": [
+        "email_category"
+      ],
+      "input": "Hi, We hope your recent service appointment was satisfactory. We appreciate your business. If you have any feedback or need further assistance, please don't hesitate to reach out. Thank you for choosing [Your Company]."
+    },
+    "human_mapped_output": {
+      "email_category": "Customer Appreciation"
+    }
+  },
+  {
+    "api_input": {
+      "field_of_activity": "email center",
+      "attribute": [
+        "email_category"
+      ],
+      "input": "Hello ,\nI would like to confirm our appointment scheduled for 10th of March. Please let me know if there are any changes or if you require any additional information.\nThank you,"
+    },
+    "human_mapped_output": {
+      "email_category": "Appointment/Reservation"
+    }
+  },
+  {
+    "api_input": {
+      "field_of_activity": "email center",
+      "attribute": [
+        "email_category"
+      ],
+      "input": "Dear Team,\nI am writing to express my interest in the Support Level One position at your company. Attached is my resume for your review. I look forward to the opportunity for an interview to discuss my qualifications in more detail.\nSincerely,"
+    },
+    "human_mapped_output": {
+      "email_category": "Job Application"
+    }
+  },
+  {
+    "api_input": {
+      "field_of_activity": "email center",
+      "attribute": [
+        "email_category"
+      ],
+      "input": "Hi,\nWe're excited to share our latest products and exclusive offers with you. Click the link below to discover more and enjoy special discounts!\n\nRegards,"
+    },
+    "human_mapped_output": {
+      "email_category": "Newsletter/Marketing"
+    }
+  },
+  {
+    "api_input": {
+      "field_of_activity": "email center",
+      "attribute": [
+        "email_category"
+      ],
+      "input": "Dear customer, We're excited to announce the launch of our latest product/feature - Email AI Classification! Discover how it can enhance your email classification and visit our website to explore more. Don't miss out on the exclusive introductory offer"
+    },
+    "human_mapped_output": {
+      "email_category": "Newsletter/Marketing"
+    }
+  },
+  {
+    "api_input": {
+      "field_of_activity": "email center",
+      "attribute": [
+        "email_category"
+      ],
+      "input": "Hello subscriber, As the holiday season approaches, we're delighted to share some festive cheer with exclusive discounts and promotions just for you! Explore our holiday collection and enjoy savings on your favorite products. Hurry, these special offers are available for a limited time only"
+    },
+    "human_mapped_output": {
+      "email_category": "Newsletter/Marketing"
+    }
+  },
+  {
+    "api_input": {
+      "field_of_activity": "email center",
+      "attribute": [
+        "email_category"
+      ],
+      "input": " Hi, Knowledge is power! Dive into our latest blog posts covering relevant AI industry topics. Stay informed, learn new strategies, and gain insights to boost your skills. Don't miss out on the opportunity to expand your expertise!"
+    },
+    "human_mapped_output": {
+      "email_category": "Newsletter/Marketing"
+    }
+  },
+  {
+    "api_input": {
+      "field_of_activity": "email center",
+      "attribute": [
+        "email_category"
+      ],
+      "input": "Dear Support Team, I am experiencing difficulties with AI Classification App. The application crashes consistently when I attempt to classify emails. Can you please provide assistance in resolving this issue promptly?"
+    },
+    "human_mapped_output": {
+      "email_category": "Technical Issue"
+    }
+  },
+  {
+    "api_input": {
+      "field_of_activity": "email center",
+      "attribute": [
+        "email_category"
+      ],
+      "input": "Hello Team, I wanted to express my gratitude for the outstanding service I received from your support team. The prompt response and effective resolution of my issue exceeded my expectations. Thank you for your excellent support!"
+    },
+    "human_mapped_output": {
+      "email_category": "Praise/Compliment"
+    }
+  },
+  {
+    "api_input": {
+      "field_of_activity": "email center",
+      "attribute": [
+        "email_category"
+      ],
+      "input": "Hi there, This is a reminder that Invoice #0000001 is due for payment on 10th of March. Please ensure timely payment to avoid any disruptions to your services. Thank you for your prompt attention to this matter."
+    },
+    "human_mapped_output": {
+      "email_category": "Billing/Invoice"
+    }
+  },
+  {
+    "api_input": {
+      "field_of_activity": "email center",
+      "attribute": [
+        "email_category"
+      ],
+      "input": "Hi, I am reaching out on behalf of our company. We are interested in exploring potential collaboration opportunities with your company. Could we schedule a meeting to discuss this further? Thank you.,"
+    },
+    "human_mapped_output": {
+      "email_category": "Collaboration/Partnership"
+    }
+  },
+  {
+    "api_input": {
+      "field_of_activity": "email center",
+      "attribute": [
+        "email_category"
+      ],
+      "input": "Dear All, You are cordially invited to attend Christmas Party, which will take place on the 20th of December. Please RSVP by 16th this month. We look forward to your presence at this special occasion."
+    },
+    "human_mapped_output": {
+      "email_category": "Event Invitation"
+    }
+  },
+  {
+    "api_input": {
+      "field_of_activity": "email center",
+      "attribute": [
+        "email_category"
+      ],
+      "input": "Dear Sir, Attached is the draft of the contract for our upcoming collaboration. Please review it carefully, and if you have any questions or suggested changes, let us know at your earliest convenience. We aim to finalize this agreement by the end of the month. Thank you."
+    },
+    "human_mapped_output": {
+      "email_category": "Legal Matter"
+    }
+  },
+  {
+    "api_input": {
+      "field_of_activity": "email center",
+      "attribute": [
+        "email_category"
+      ],
+      "input": "Hi, We value your opinion! Could you take a few minutes to share your experience with our product? Your feedback is crucial for us to improve and provide better service to our customers. Click www.test.com to leave your review. Thank you!"
+    },
+    "human_mapped_output": {
+      "email_category": "Feedback/Review Request"
+    }
+  },
+  {
+    "api_input": {
+      "field_of_activity": "email center",
+      "attribute": [
+        "email_category"
+      ],
+      "input": "Dear Support, I am writing to request the cancellation of my subscription/service and a refund for the remaining unused portion. Please confirm the cancellation and provide information on the refund process. Thank you."
+    },
+    "human_mapped_output": {
+      "email_category": "Cancellation/Refund"
+    }
+  },
+  {
+    "api_input": {
+      "field_of_activity": "email center",
+      "attribute": [
+        "email_category"
+      ],
+      "input": "Dear Team, We wanted to express our sincere appreciation for your continued loyalty and support. Your satisfaction is our top priority, and we look forward to serving you in the future. Thank you for being a valued customer."
+    },
+    "human_mapped_output": {
+      "email_category": "Customer Appreciation"
+    }
+  },
+  {
+    "api_input": {
+      "field_of_activity": "email center",
+      "attribute": [
+        "email_category"
+      ],
+      "input": "Hi, We are excited to announce that registration is now open for our upcoming workshop. This session will cover AI topics, and we believe it will be beneficial for your professional development. Secure your spot by end of the month."
+    },
+    "human_mapped_output": {
+      "email_category": "Educational/Training"
+    }
+  },
+  {
+    "api_input": {
+      "field_of_activity": "email center",
+      "attribute": [
+        "email_category"
+      ],
+      "input": "Dear Customer Support,\n\nI hope this email finds you well. I am writing to bring to your attention some concerns I have regarding my recent purchase of TV. Unfortunately, my experience has not been up to the standards I expected.\n\n\n\nI have attached pictures illustrating the issue for your reference.\n\nI understand that issues can arise, and I appreciate your prompt attention to this matter. I kindly request a resolution to the problem and would like to discuss the possibility of a replacement or refund.\n\nPlease let me know the steps that need to be taken to address this matter at your earliest convenience. I believe in the quality of your products and hope that we can resolve this issue amicably.\n\nThank you for your attention to this matter.\n\nSincerely,"
+    },
+    "human_mapped_output": {
+      "email_category": "Cancellation/Refund"
+    }
+  }
+]

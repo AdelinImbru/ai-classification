@@ -1,0 +1,443 @@
+ [
+    {
+      "title": "Legislators and Senior Officials",
+      "synonyms": ["Legislation", "Government", "Policy-making", "Public administration", "Legislative process", "Governance"]
+    },
+    {
+      "title": "Managing Directors and Chief Executives",
+      "synonyms": ["Executive leadership", "Strategic management", "Corporate governance", "Business development", "Leadership vision", "Executive decision-making"]
+    },
+    {
+      "title": "Business Services and Administration Managers",
+      "synonyms": ["Business administration", "Office management", "Administrative services", "Operations management", "Process improvement", "Business services"]
+    },
+    {
+      "title": "Sales, Marketing, and Development Managers",
+      "synonyms": ["Sales strategy", "Marketing management", "Business development", "Market research", "Sales planning", "Product development"]
+    },
+    {
+      "title": "Production Managers in Agriculture, Forestry, and Fisheries",
+      "synonyms": ["Agricultural production", "Forestry management", "Fisheries operations", "Crop management", "Harvest planning", "Agribusiness"]
+    },
+    {
+      "title": "Manufacturing, Mining, Construction, and Distribution Managers",
+      "synonyms": ["Manufacturing operations", "Mining management", "Construction projects", "Distribution logistics", "Supply chain management", "Production planning"]
+    },
+    {
+      "title": "Information and Communications Technology Service Managers",
+      "synonyms": ["IT service management", "Technology infrastructure", "ICT strategy", "System administration", "Network security", "Information technology services"]
+    },
+    {
+      "title": "Professional Services Managers",
+      "synonyms": ["Professional services", "Client management", "Service delivery", "Consulting services", "Project management", "Quality assurance"]
+    },
+    {
+      "title": "Hotel and Restaurant Managers",
+      "synonyms": ["Hospitality management", "Hotel operations", "Guest services", "Restaurant management", "Food and beverage", "Customer satisfaction"]
+    },
+    {
+      "title": "Retail and Wholesale Trade Managers",
+      "synonyms": ["Retail operations", "Wholesale trade", "Merchandising", "Inventory management", "Retail marketing", "Supply chain in retail"]
+    },
+    {
+      "title": "Physical and Earth Science Professionals",
+      "synonyms": ["Geology", "Earth sciences", "Environmental research", "Data analysis", "Scientific experimentation", "Field studies"]
+    },
+    {
+      "title": "Mathematicians, Actuaries, and Statisticians",
+      "synonyms": ["Mathematical modeling", "Actuarial science", "Statistical analysis", "Probability theory", "Data interpretation", "Quantitative analysis"]
+    },
+    {
+      "title": "Life Science Professionals",
+      "synonyms": ["Biology", "Life sciences", "Biotechnology", "Genetics", "Research methodology", "Laboratory techniques"]
+    },
+    {
+      "title": "Engineering Professionals (excluding Electrotechnology)",
+      "synonyms": ["Engineering design", "Project management", "Mechanical engineering", "Civil engineering", "Structural analysis", "Materials science"]
+    },
+    {
+      "title": "Electrotechnology Engineers",
+      "synonyms": ["Electrical engineering", "Electronics", "Power systems", "Control systems", "Circuit design", "Electromagnetic theory"]
+    },
+    {
+      "title": "Medical Doctors",
+      "synonyms": ["Medicine", "Patient care", "Diagnosis", "Treatment planning", "Medical research", "Healthcare management"]
+    },
+    {
+      "title": "Nursing and Midwifery Professionals",
+      "synonyms": ["Nursing care", "Patient advocacy", "Maternal healthcare", "Clinical procedures", "Health promotion", "Midwifery services"]
+    },
+    {
+      "title": "Traditional and Complementary Medicine Professionals",
+      "synonyms": ["Alternative medicine", "Traditional healing practices", "Herbal medicine", "Holistic health", "Naturopathy", "Integrative medicine"]
+    },
+    {
+      "title": "Paramedical Practitioners",
+      "synonyms": ["Paramedicine", "Emergency medical services", "Patient assessment", "Trauma care", "Medical response", "Pre-hospital care"]
+    },
+    {
+      "title": "Veterinarians",
+      "synonyms": ["Veterinary medicine", "Animal health", "Surgery", "Diagnostics", "Preventive care", "Zoonotic diseases"]
+    },
+    {
+      "title": "Medical Assistant Professionals",
+      "synonyms": ["Medical assistance", "Clinical support", "Administrative tasks", "Patient coordination", "Medical records management", "Healthcare assistance"]
+    },
+    {
+      "title": "University and Higher Education Teachers",
+      "synonyms": ["Higher education", "Academic instruction", "Research supervision", "Curriculum development", "Lectureship", "Educational assessment"]
+    },
+    {
+      "title": "Vocational Education Teachers",
+      "synonyms": ["Vocational training", "Skill development", "Technical education", "Instructional planning", "Industry-specific training", "Curriculum design"]
+    },
+    {
+      "title": "Secondary Education Teachers",
+      "synonyms": ["Secondary education", "Classroom instruction", "Subject expertise", "Lesson planning", "Student assessment", "Educational technology"]
+    },
+    {
+      "title": "Primary School and Early Childhood Teachers",
+      "synonyms": ["Primary education", "Early childhood education", "Pedagogy", "Child development", "Classroom management", "Educational games"]
+    },
+    {
+      "title": "Finance Professionals",
+      "synonyms": ["Financial analysis", "Accounting", "Risk management", "Investment strategies", "Financial planning", "Banking operations"]
+    },
+    {
+      "title": "Administration Professionals",
+      "synonyms": ["Administrative management", "Office operations", "Administrative support", "Organizational skills", "Records management", "Project coordination"]
+    },
+    {
+      "title": "Software and Applications Developers and Analysts",
+      "synonyms": ["Software development", "Programming", "Coding", "Application design", "System analysis", "Software testing"]
+    },
+    {
+      "title": "Database and Network Professionals",
+      "synonyms": ["Database management", "Network administration", "Data security", "Database optimization", "Network infrastructure", "IT systems management"]
+    },
+    {
+      "title": "Legal Professionals",
+      "synonyms": ["Legal research", "Litigation", "Contract law", "Legal writing", "Legal analysis", "Regulatory compliance"]
+    },
+    {
+      "title": "Librarians, Archivists, and Curators",
+      "synonyms": ["Library science", "Archival management", "Information retrieval", "Cataloging", "Collection development", "Preservation"]
+    },
+    {
+      "title": "Social and Religious Professionals",
+      "synonyms": ["Social work", "Counseling", "Community development", "Religious studies", "Ethical leadership", "Social justice"]
+    },
+    {
+      "title": "Authors, Journalists, and Linguists",
+      "synonyms": ["Writing", "Journalism", "Linguistics", "Editing", "Communication skills", "Language proficiency"]
+    },
+    {
+      "title": "Creative and Performing Artists",
+      "synonyms": ["Creative arts", "Performing arts", "Fine arts", "Visual arts", "Music", "Theatrical performance"]
+    },
+     {
+      "title": "Physical and Engineering Science Technicians",
+      "synonyms": ["Laboratory testing", "Scientific equipment", "Data analysis", "Technical support", "Engineering research", "Instrument calibration"]
+    },
+    {
+      "title": "Mining, Manufacturing, and Construction Supervisors",
+      "synonyms": ["Site supervision", "Production management", "Safety regulations", "Quality control", "Manufacturing processes", "Construction coordination"]
+    },
+    {
+      "title": "Process Control Technicians",
+      "synonyms": ["Process automation", "Control systems", "Industrial instrumentation", "Quality monitoring", "Troubleshooting", "Process optimization"]
+    },
+    {
+      "title": "Life Science Technicians and Related Associate Professionals",
+      "synonyms": ["Laboratory techniques", "Biomedical research", "Specimen analysis", "Scientific experiments", "Data recording", "Laboratory safety"]
+    },
+    {
+      "title": "Ship and Aircraft Controllers and Technicians",
+      "synonyms": ["Navigation systems", "Traffic control", "Aircraft maintenance", "Maritime operations", "Radar monitoring", "Safety protocols"]
+    },
+    {
+      "title": "Medical and Pharmaceutical Technicians",
+      "synonyms": ["Medication dispensing", "Pharmacy operations", "Medical equipment maintenance", "Patient care support", "Prescription filling", "Healthcare compliance"]
+    },
+    {
+      "title": "Nursing and Midwifery Associate Professionals",
+      "synonyms": ["Patient care assistance", "Medical procedures support", "Maternal healthcare", "Clinical documentation", "Health promotion", "Nursing coordination"]
+    },
+    {
+      "title": "Traditional and Complementary Medicine Associate Professionals",
+      "synonyms": ["Holistic therapies", "Traditional healing practices", "Herbal medicine support", "Alternative therapies", "Wellness counseling", "Complementary medicine"]
+    },
+    {
+      "title": "Veterinary Technicians and Assistants",
+      "synonyms": ["Animal care support", "Veterinary procedures", "Diagnostic testing", "Surgical assistance", "Animal health monitoring", "Client communication"]
+    },
+    {
+      "title": "Financial and Mathematical Associate Professionals",
+      "synonyms": ["Financial analysis", "Data modeling", "Risk assessment", "Investment analysis", "Actuarial calculations", "Quantitative analysis"]
+    },
+    {
+      "title": "Sales and Purchasing Agents and Brokers",
+      "synonyms": ["Sales strategy", "Client negotiations", "Purchasing processes", "Supply chain management", "Market research", "Contract negotiations"]
+    },
+    {
+      "title": "Business Services Agents",
+      "synonyms": ["Business support", "Client services", "Administrative assistance", "Project coordination", "Data entry", "Customer relations"]
+    },
+    {
+      "title": "Administrative and Specialized Secretaries",
+      "synonyms": ["Office administration", "Secretarial duties", "Document management", "Calendar coordination", "Executive support", "Administrative processes"]
+    },
+    {
+      "title": "Regulatory Government Associate Professionals",
+      "synonyms": ["Regulatory compliance", "Government policies", "Inspection procedures", "Compliance reporting", "Legal regulations", "Regulatory affairs"]
+    },
+    {
+      "title": "Legal, Social, and Religious Associate Professionals",
+      "synonyms": ["Legal support", "Social work assistance", "Counseling support", "Religious studies", "Community development", "Advocacy"]
+    },
+    {
+      "title": "Sports and Fitness Workers",
+      "synonyms": ["Sports coaching", "Fitness instruction", "Athletic training", "Event coordination", "Sports management", "Physical conditioning"]
+    },
+    {
+      "title": "Artistic, Cultural, and Culinary Associate Professionals",
+      "synonyms": ["Artistic support", "Cultural activities", "Culinary arts assistance", "Event planning", "Creative expression", "Cultural preservation"]
+    },
+    {
+      "title": "Information and Communications Technology Operations and User Support Technicians",
+      "synonyms": ["IT support", "Technical troubleshooting", "Systems administration", "Helpdesk assistance", "User training", "Software installation"]
+    },
+    {
+      "title": "Telecommunications and Broadcasting Technicians",
+      "synonyms": ["Telecommunications systems", "Broadcasting equipment", "Network maintenance", "Signal transmission", "Radio frequency technology", "Broadcast production"]
+    },
+    {
+      "title": "Travel Attendants, Conductors, and Guides",
+      "synonyms": ["Passenger services", "Conducting duties", "Tour guiding", "Travel coordination", "Customer assistance", "Transportation services"]
+    },
+    {
+      "title": "Cooks",
+      "synonyms": ["Culinary arts", "Food preparation", "Menu planning", "Kitchen management", "Culinary techniques", "Cooking skills"]
+    },
+    {
+      "title": "Waiters and Bartenders",
+      "synonyms": ["Customer service", "Food and beverage service", "Bartending skills", "Menu knowledge", "Order fulfillment", "Hospitality"]
+    },
+    {
+      "title": "Hairdressers, Beauticians, and Related Workers",
+      "synonyms": ["Hair styling", "Beauty treatments", "Cosmetology", "Salon services", "Skin care", "Hair coloring techniques"]
+    },
+    {
+      "title": "Building and Housekeeping Supervisors",
+      "synonyms": ["Facility management", "Housekeeping supervision", "Maintenance coordination", "Cleaning procedures", "Building safety", "Facility inspection"]
+    },
+    {
+      "title": "Street and Market Salespersons",
+      "synonyms": ["Street sales", "Market vending", "Product promotion", "Customer engagement", "Salesmanship", "Merchandising"]
+    },
+    {
+      "title": "Shop Salespersons",
+      "synonyms": ["Retail sales", "Customer assistance", "Merchandise knowledge", "Point-of-sale transactions", "Upselling techniques", "Store operations"]
+    },
+    {
+      "title": "Cashiers and Ticket Clerks",
+      "synonyms": ["Cash handling", "Transaction processing", "Point-of-sale systems", "Ticket sales", "Customer transactions", "Cash register operation"]
+    },
+    {
+      "title": "Child Care Workers and Teachers' Aides",
+      "synonyms": ["Child development", "Educational support", "Classroom assistance", "Child care services", "Lesson reinforcement", "Playgroup supervision"]
+    },
+    {
+      "title": "Personal Care Workers in Health Services",
+      "synonyms": ["Patient care", "Healthcare assistance", "Elderly care", "Home health services", "Personal hygiene support", "Health monitoring"]
+    },
+    {
+      "title": "Protective Services Workers",
+      "synonyms": ["Security services", "Law enforcement", "Public safety", "Emergency response", "Surveillance", "Crisis management"]
+    },
+    {
+      "title": "Market Gardeners and Crop Growers",
+      "synonyms": ["Crop cultivation", "Market gardening", "Agricultural production", "Horticulture", "Irrigation techniques", "Harvesting practices"]
+    },
+    {
+      "title": "Animal Producers",
+      "synonyms": ["Livestock farming", "Animal husbandry", "Breeding programs", "Pasture management", "Animal health care", "Farm animal nutrition"]
+    },
+    {
+      "title": "Mixed Crop and Animal Producers",
+      "synonyms": ["Integrated farming", "Crop and livestock management", "Diversified agriculture", "Sustainable farming", "Agroecology", "Farming systems"]
+    },
+    {
+      "title": "Forestry and Related Workers",
+      "synonyms": ["Forest management", "Timber harvesting", "Tree planting", "Forest conservation", "Logging operations", "Wildlife habitat preservation"]
+    },
+    {
+      "title": "Fishery Workers, Hunters, and Trappers",
+      "synonyms": ["Fishing techniques", "Aquaculture", "Wildlife management", "Hunting practices", "Trapping methods", "Fisheries conservation"]
+    },
+    {
+      "title": "Subsistence Crop Farmers",
+      "synonyms": ["Subsistence farming", "Crop cultivation for sustenance", "Small-scale agriculture", "Food crop production", "Traditional farming methods", "Rural agriculture"]
+    },
+    {
+      "title": "Subsistence Livestock Farmers",
+      "synonyms": ["Subsistence animal husbandry", "Livestock for sustenance", "Small-scale animal farming", "Traditional herding practices", "Rural livestock management", "Pastoralism"]
+    },
+    {
+      "title": "Subsistence Mixed Crop and Livestock Farmers",
+      "synonyms": ["Mixed farming for sustenance", "Integrated crop and livestock", "Subsistence agriculture", "Traditional farming systems", "Small-scale family farming", "Rural self-sufficiency"]
+    },
+    {
+      "title": "Subsistence Fishers, Hunters, Trappers, and Gatherers",
+      "synonyms": ["Subsistence fishing", "Hunting for food", "Trapping for sustenance", "Gathering practices", "Traditional harvesting", "Wild food collection"]
+    },
+     {
+      "title": "Building Frame and Related Trades Workers",
+      "synonyms": ["Construction framing", "Structural carpentry", "Building trades", "Framing techniques", "Construction materials", "Structural assembly"]
+    },
+    {
+      "title": "Building Finishers and Related Trades Workers",
+      "synonyms": ["Finishing trades", "Interior finishing", "Surface treatment", "Decorative finishes", "Finishing materials", "Finishing techniques"]
+    },
+    {
+      "title": "Painters, Building Structure Cleaners, and Related Trades Workers",
+      "synonyms": ["Painting techniques", "Surface preparation", "Coating application", "Building cleaning", "Exterior maintenance", "Protective coatings"]
+    },
+    {
+      "title": "Sheet and Structural Metal Workers, Moulders, and Welders, and Related Workers",
+      "synonyms": ["Metal fabrication", "Sheet metal work", "Structural welding", "Moulding techniques", "Metal shaping", "Welding processes"]
+    },
+    {
+      "title": "Blacksmiths, Toolmakers, and Related Trades Workers",
+      "synonyms": ["Blacksmithing", "Toolmaking", "Metalworking skills", "Forge operations", "Tool fabrication", "Metal crafting"]
+    },
+    {
+      "title": "Machinery Mechanics and Repairers",
+      "synonyms": ["Machinery repair", "Mechanical systems", "Equipment maintenance", "Troubleshooting", "Mechanical diagnostics", "Repair techniques"]
+    },
+    {
+      "title": "Handicraft Workers",
+      "synonyms": ["Handicraft creation", "Artisanal skills", "Craftsmanship", "Traditional crafts", "Handmade products", "Artistic craftsmanship"]
+    },
+    {
+      "title": "Printing Trades Workers",
+      "synonyms": ["Printing techniques", "Press operations", "Graphic design", "Print finishing", "Print quality control", "Printing materials"]
+    },
+    {
+      "title": "Electrical Equipment Installers and Repairers",
+      "synonyms": ["Electrical installation", "Equipment repair", "Wiring systems", "Electrical diagnostics", "Power distribution", "Electrical maintenance"]
+    },
+    {
+      "title": "Electronics and Telecommunications Installers and Repairers",
+      "synonyms": ["Electronics installation", "Telecommunications systems", "Circuit board repair", "Communication networks", "Electronic troubleshooting", "Telecommunication equipment"]
+    },
+    {
+      "title": "Food Processing and Related Trades Workers",
+      "synonyms": ["Food processing", "Food production", "Quality control", "Processing machinery", "Hygiene standards", "Food safety"]
+    },
+    {
+      "title": "Wood Treaters, Cabinet-Makers, and Related Trades Workers ",
+      "synonyms": ["Wood treatment", "Cabinet making", "Woodworking skills", "Furniture construction", "Wood finishing", "Carpentry techniques"]
+    },
+    {
+      "title": "Garment and Related Trades Workers",
+      "synonyms": ["Garment production", "Textile techniques", "Apparel manufacturing", "Sewing and stitching", "Pattern making", "Garment finishing"]
+    },
+    {
+      "title": "Mining and Mineral Processing Plant Operators",
+      "synonyms": ["Ore extraction", "Mineral processing", "Plant operation", "Mining equipment", "Resource extraction", "Material handling"]
+    },
+    {
+      "title": "Metal Processing and Finishing Plant Operators",
+      "synonyms": ["Metal fabrication", "Finishing processes", "Metal processing", "Plant operation", "Quality control", "Metal finishing"]
+    },
+    {
+      "title": "Chemical and Photographic Products Plant and Machine Operators",
+      "synonyms": ["Chemical processing", "Photographic products", "Plant operation", "Machine operation", "Chemical production", "Quality assurance"]
+    },
+    {
+      "title": "Rubber, Plastic, and Paper Products Machine Operators",
+      "synonyms": ["Polymer processing", "Plastic production", "Rubber manufacturing", "Paper products", "Machine operation", "Quality control"]
+    },
+    {
+      "title": "Textile, Fur, and Leather Products Machine Operators",
+      "synonyms": ["Textile manufacturing", "Fur processing", "Leather products", "Machine operation", "Textile finishing", "Quality assurance"]
+    },
+    {
+      "title": "Food and Related Products Machine Operators",
+      "synonyms": ["Food processing", "Beverage production", "Machine operation", "Packaging equipment", "Quality control", "Food safety"]
+    },
+    {
+      "title": "Wood Processing and Papermaking Plant Operators",
+      "synonyms": ["Wood processing", "Papermaking", "Plant operation", "Timber production", "Pulp and paper industry", "Quality assurance"]
+    },
+    {
+      "title": "Other Stationary Plant and Machine Operators",
+      "synonyms": ["Industrial machinery", "Plant operation", "Machine operation", "Process control", "Equipment maintenance", "Quality control"]
+    },
+    {
+      "title": "Assemblers",
+      "synonyms": ["Assembly line", "Product assembly", "Manufacturing process", "Assembly techniques", "Quality assurance", "Precision assembly"]
+    },
+    {
+      "title": "Locomotive Engine Drivers and Related Workers",
+      "synonyms": ["Locomotive operation", "Rail transportation", "Engine maintenance", "Rail safety", "Train operations", "Railroad logistics"]
+    },
+    {
+      "title": "Car, Van, and Motorcycle Drivers",
+      "synonyms": ["Vehicle operation", "Transportation services", "Driving safety", "Route planning", "Delivery services", "Traffic regulations"]
+    },
+    {
+      "title": "Heavy Truck and Bus Drivers",
+      "synonyms": ["Heavy vehicle operation", "Long-haul trucking", "Bus transportation", "Freight logistics", "Commercial driving", "Vehicle maintenance"]
+    },
+    {
+      "title": "Mobile Plant Operators",
+      "synonyms": ["Mobile equipment", "Plant operation", "Heavy machinery", "Equipment maintenance", "Construction vehicles", "Earthmoving equipment"]
+    },
+    {
+      "title": "Ships' Deck Crews and Related Workers",
+      "synonyms": ["Maritime operations", "Deckhand duties", "Ship navigation", "Maritime safety", "Vessel maintenance", "Shipboard operations"]
+    },
+     {
+      "title": "Domestic, Hotel, and Office Cleaners and Helpers",
+      "synonyms": ["Cleaning services", "Domestic cleaning", "Hotel housekeeping", "Office cleaning", "Maid services", "Cleaning assistance"]
+    },
+    {
+      "title": "Vehicle, Window, Laundry, and Other Hand Cleaning Workers",
+      "synonyms": ["Hand cleaning services", "Vehicle cleaning", "Window cleaning", "Laundry services", "Exterior cleaning", "Detailing services"]
+    },
+    {
+      "title": "Agricultural, Forestry, and Fishery Labourers",
+      "synonyms": ["Farm labor", "Agricultural work", "Forestry labor", "Fishery labor", "Crop harvesting", "Manual labor in agriculture"]
+    },
+    {
+      "title": "Mining and Construction Labourers",
+      "synonyms": ["Construction labor", "Mining operations", "Manual construction work", "Excavation tasks", "Construction site labor", "Demolition work"]
+    },
+    {
+      "title": "Manufacturing Labourers",
+      "synonyms": ["Manufacturing tasks", "Production line labor", "Factory work", "Assembly line tasks", "Manual manufacturing", "Plant labor"]
+    },
+    {
+      "title": "Transport and Storage Labourers",
+      "synonyms": ["Freight handling", "Warehouse labor", "Transportation support", "Loading and unloading", "Stockroom tasks", "Storage facility labor"]
+    },
+    {
+      "title": "Food Preparation Assistants",
+      "synonyms": ["Food preparation", "Kitchen assistance", "Culinary support", "Meal preparation", "Food service tasks", "Kitchen helper"]
+    },
+    {
+      "title": "Street and Related Service Workers",
+      "synonyms": ["Street services", "Public space maintenance", "Outdoor cleaning", "Street beautification", "Urban maintenance", "Street infrastructure tasks"]
+    },
+    {
+      "title": "Street Vendors (excluding Food)",
+      "synonyms": ["Street vending", "Vendor services", "Merchandise sales", "Outdoor sales", "Street market operations", "Vendor assistance"]
+    },
+    {
+      "title": "Refuse Workers",
+      "synonyms": ["Waste management", "Garbage collection", "Refuse disposal", "Sanitation services", "Recycling operations", "Waste handling"]
+    }
+  ]
+

@@ -1,0 +1,97 @@
+[
+  {
+    "name": "Action",
+    "description": "High-energy films characterized by intense physical activity, thrilling stunts, and dynamic sequences. Action movies often feature heroes overcoming challenges, engaging in combat, and pursuing daring missions.",
+    "attribute": "movie_genres"
+  },
+  {
+    "name": "Comedy",
+    "description": "Light-hearted films designed to amuse and entertain, emphasizing humor, witty dialogue, and amusing situations. Comedies aim to evoke laughter and uplift the audience's mood",
+    "attribute": "movie_genres"
+  },
+  {
+    "name": "Drama",
+    "description": "Story-driven films that explore realistic and emotionally charged narratives. Dramas often delve into complex human relationships, societal issues, and personal struggles, aiming to evoke deep emotions",
+    "attribute": "movie_genres"
+  },
+  {
+    "name": "Horror",
+    "description": "Films designed to evoke fear, suspense, and shock. Horror movies often involve supernatural elements, psychological thrills, or terrifying scenarios that aim to elicit a strong emotional response.",
+    "attribute": "movie_genres"
+  },
+  {
+    "name": "Sci-Fi",
+    "description": "Speculative films exploring futuristic concepts, advanced technology, and often intergalactic adventures. Sci-fi movies may delve into scientific possibilities, alternate realities, and imaginative scenarios",
+    "attribute": "movie_genres"
+  },
+  {
+    "name": "Fantasy",
+    "description": "Enchanting films set in fantastical worlds with magical elements, mythical creatures, and extraordinary adventures. Fantasy movies often involve quests, epic battles, and the triumph of good over evil",
+    "attribute": "movie_genres"
+  },
+  {
+    "name": "Mystery",
+    "description": "Intriguing films centered around solving a puzzle or uncovering hidden truths. Mystery movies typically involve suspense, detective work, and unexpected twists to keep audiences guessing",
+    "attribute": "movie_genres"
+  },
+  {
+    "name": "Thriller",
+    "description": "Suspenseful films designed to keep viewers on the edge of their seats. Thrillers often involve tension, anticipation, and a sense of impending danger, creating a gripping and intense experience",
+    "attribute": "movie_genres"
+  },
+  {
+    "name": "Romance",
+    "description": "Heartwarming films centered around love and romantic relationships. Romance movies explore the dynamics of love, passion, and emotional connections, often featuring protagonists overcoming obstacles to find happiness",
+    "attribute": "movie_genres"
+  },
+  {
+    "name": "Adventure",
+    "description": "Exciting films that focus on exploration, daring quests, and adventurous journeys. Adventure movies often involve characters embarking on epic expeditions, facing challenges, and discovering new territories",
+    "attribute": "movie_genres"
+  },
+  {
+    "name": "Animation",
+    "description": "Films created through animation techniques, appealing to audiences of all ages. Animated movies can span various genres but are characterized by their use of animated characters and settings",
+    "attribute": "movie_genres"
+  },
+  {
+    "name": "Documentary",
+    "description": "Factual films that aim to inform, educate, or provide a non-fictional account of real events, people, or issues. Documentaries cover a wide range of topics and often present perspectives on social, cultural, or historical subjects",
+    "attribute": "movie_genres"
+  },
+  {
+    "name": "History",
+    "description": "Explore the past through narratives set in historical periods, offering insights into significant events, cultures, and characters. Historical films often blend fiction with real events to create compelling stories set against a backdrop of specific time periods",
+    "attribute": "movie_genres"
+  },
+  {
+    "name": "Family",
+    "description": "Designed for all age groups, family movies focus on themes of togetherness, love, and shared experiences. These films often feature relatable characters navigating challenges while providing wholesome entertainment suitable for the entire family",
+    "attribute": "movie_genres"
+  },
+  {
+    "name": "Musical",
+    "description": "Incorporating song and dance as integral elements, musicals use music to propel the storyline. Characters express emotions and advance the plot through choreographed performances, making the genre a vibrant and engaging cinematic experience",
+    "attribute": "movie_genres"
+  },
+  {
+    "name": "Biography",
+    "description": "Biographical films depict the life and achievements of real individuals, ranging from historical figures to contemporary icons. These movies aim to provide audiences with insights into the personal and professional journey of the featured person",
+    "attribute": "movie_genres"
+  },
+  {
+    "name": "Crime",
+    "description": "Crime movies revolve around criminal activities, investigations, and the pursuit of justice. They explore the darker aspects of human nature, often delving into the motives behind crimes, the dynamics of law enforcement, and the consequences of illegal actions",
+    "attribute": "movie_genres"
+  },
+  {
+    "name": "War",
+    "description": "Set against the backdrop of armed conflicts, war films capture the experiences of soldiers, the impact on civilians, and the complexities of wartime relationships. These movies may focus on specific battles, historical events, or the broader consequences of war",
+    "attribute": "movie_genres"
+  },
+  {
+    "name": "Western",
+    "description": "Immersed in the American Old West, Westerns typically feature cowboys, outlaws, and frontier life. They explore themes of justice, individualism, and the clash between civilization and the untamed wilderness. Iconic elements include dusty landscapes, saloons, and gunfights",
+    "attribute": "movie_genres"
+  }
+]

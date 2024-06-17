@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "title": "Internship/trainee position",
+    "description": "An internship or trainee position offers insight into a profession or a company, usually for career starters or students. Job advertisements could contain phrases such as \"internship position\", \"intern wanted\" or \"trainee program\".",
+    "attribute": "employment_mode"
+  },
+  {
+    "id": 2,
+    "title": "Temporary contract/season",
+    "description": "A temporary contract or seasonal contract is an employment for a fixed period of time, often in industries that have fluctuations over the course of the year, such as tourism. Job advertisements could contain wording such as \"fixed-term contract\", \"seasonal work\" or \"seasonal worker\".",
+    "attribute": "employment_mode"
+  },
+  {
+    "id": 3,
+    "title": "Permanent part-time position",
+    "description": "With part-time employment, the employee work  only a reduced number of hours (e.g. 30 hours per week). Job advertisements could contain phrases such as \" Part-time position \" or \"Looking for part-time employees\".",
+    "attribute": "employment_mode"
+  },
+  {
+    "id": 4,
+    "title": "Permanent full-time position",
+    "description": "Full-time means that someone works the regular hours of a company or industry, usually 35 to 40 hours per week. Job advertisements might use phrases like \"full-time,\" \"full-time position,\" or \"full-time work.\" ",
+    "attribute": "employment_mode"
+  },
+  {
+    "id": 5,
+    "title": "Permanent full-time/part-time position",
+    "description": "Full-time/part-time means that the employment is not necessarily full-time or part-time and that it is one of the two depending on the wants and needs of the employee and the employer.",
+    "attribute": "employment_mode"
+  },
+  {
+    "id": 6,
+    "title": "Freelance/self-employed",
+    "description": "Working freelance or self-employed means that you are not permanently employed by an employer, but rather independently accept orders or projects from various customers. Job advertisements could contain phrases such as \"Freelancer wanted\", \"On a project basis\" or \" Independent collaboration\".",
+    "attribute": "employment_mode"
+  }
+]

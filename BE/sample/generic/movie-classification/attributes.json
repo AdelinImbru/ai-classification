@@ -1,0 +1,7 @@
+[
+  {
+    "name": "movie_genres",
+    "description": "The genre of movie",
+    "type": "string[]"
+  }
+]

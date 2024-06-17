@@ -1,0 +1,470 @@
+[
+  {
+    "api_input": {
+      "field_of_activity": "chat bot",
+      "attribute": [
+        "intent"
+      ],
+      "input": "Hello there! How are you today?"
+    },
+    "human_mapped_output": {
+      "intent": "Greeting"
+    }
+  },
+  {
+    "api_input": {
+      "field_of_activity": "chat bot",
+      "attribute": [
+        "intent"
+      ],
+      "input": "Greetings! I hope you're having a great day. Can you help me with something?"
+    },
+    "human_mapped_output": {
+      "intent": "Greeting"
+    }
+  },
+  {
+    "api_input": {
+      "field_of_activity": "chat bot",
+      "attribute": [
+        "intent"
+      ],
+      "input": "Hi! Good morning. What's the weather like today?"
+    },
+    "human_mapped_output": {
+      "intent": "Greeting"
+    }
+  },
+  {
+    "api_input": {
+      "field_of_activity": "chat bot",
+      "attribute": [
+        "intent"
+      ],
+      "input": "It was nice chatting with you. Take care!"
+    },
+    "human_mapped_output": {
+      "intent": "Goodbye"
+    }
+  },
+  {
+    "api_input": {
+      "field_of_activity": "chat bot",
+      "attribute": [
+        "intent"
+      ],
+      "input": "Thanks for the help. Until next time!"
+    },
+    "human_mapped_output": {
+      "intent": "Goodbye"
+    }
+  },
+  {
+    "api_input": {
+      "field_of_activity": "chat bot",
+      "attribute": [
+        "intent"
+      ],
+      "input": "Alright, I need to go now. Goodbye!"
+    },
+    "human_mapped_output": {
+      "intent": "Goodbye"
+    }
+  },
+  {
+    "api_input": {
+      "field_of_activity": "chat bot",
+      "attribute": [
+        "intent"
+      ],
+      "input": "How can I reset my password?"
+    },
+    "human_mapped_output": {
+      "intent": "Question"
+    }
+  },
+  {
+    "api_input": {
+      "field_of_activity": "chat bot",
+      "attribute": [
+        "intent"
+      ],
+      "input": "What are the main features of your product?"
+    },
+    "human_mapped_output": {
+      "intent": "Question"
+    }
+  },
+  {
+    "api_input": {
+      "field_of_activity": "chat bot",
+      "attribute": [
+        "intent"
+      ],
+      "input": "Can you provide more details about your pricing plans?"
+    },
+    "human_mapped_output": {
+      "intent": "Question"
+    }
+  },
+  {
+    "api_input": {
+      "field_of_activity": "chat bot",
+      "attribute": [
+        "intent"
+      ],
+      "input": "I'm grateful for the quick response. Thank you!"
+    },
+    "human_mapped_output": {
+      "intent": "Expression of Gratitude"
+    }
+  },
+  {
+    "api_input": {
+      "field_of_activity": "chat bot",
+      "attribute": [
+        "intent"
+      ],
+      "input": "I appreciate your help. Thanks a lot!"
+    },
+    "human_mapped_output": {
+      "intent": "Expression of Gratitude"
+    }
+  },
+  {
+    "api_input": {
+      "field_of_activity": "chat bot",
+      "attribute": [
+        "intent"
+      ],
+      "input": "Thank you so much for your assistance!"
+    },
+    "human_mapped_output": {
+      "intent": "Expression of Gratitude"
+    }
+  },
+  {
+    "api_input": {
+      "field_of_activity": "chat bot",
+      "attribute": [
+        "intent"
+      ],
+      "input": "I'm not happy with the service. The response time is too slow, and I've been facing issues for weeks without any resolution."
+    },
+    "human_mapped_output": {
+      "intent": "Negative Sentiment"
+    }
+  },
+  {
+    "api_input": {
+      "field_of_activity": "chat bot",
+      "attribute": [
+        "intent"
+      ],
+      "input": "This is so frustrating! The app keeps crashing, and I can't get anything done. It's a waste of my time."
+    },
+    "human_mapped_output": {
+      "intent": "Negative Sentiment"
+    }
+  },
+  {
+    "api_input": {
+      "field_of_activity": "chat bot",
+      "attribute": [
+        "intent"
+      ],
+      "input": "I'm really disappointed with the product. It's not working as advertised, and I expected better quality."
+    },
+    "human_mapped_output": {
+      "intent": "Negative Sentiment"
+    }
+  },
+  {
+    "api_input": {
+      "field_of_activity": "chat bot",
+      "attribute": [
+        "intent"
+      ],
+      "input": "Kudos to your team for the recent updates! The new features are fantastic and have significantly improved my overall experience. Keep up the good work!"
+    },
+    "human_mapped_output": {
+      "intent": "Positive Sentiment"
+    }
+  },
+  {
+    "api_input": {
+      "field_of_activity": "chat bot",
+      "attribute": [
+        "intent"
+      ],
+      "input": "I'm really impressed with the service I received. The support team was quick to respond and resolved my issue efficiently. Thank you!"
+    },
+    "human_mapped_output": {
+      "intent": "Positive Sentiment"
+    }
+  },
+  {
+    "api_input": {
+      "field_of_activity": "chat bot",
+      "attribute": [
+        "intent"
+      ],
+      "input": "I just wanted to say that I love your app! It's incredibly helpful and user-friendly. Great job!"
+    },
+    "human_mapped_output": {
+      "intent": "Positive Sentiment"
+    }
+  },
+  {
+    "api_input": {
+      "field_of_activity": "chat bot",
+      "attribute": [
+        "intent"
+      ],
+      "input": "I just wanted to say that I love your new feature! It makes the whole experience much smoother and more enjoyable."
+    },
+    "human_mapped_output": {
+      "intent": "Feedback"
+    }
+  },
+  {
+    "api_input": {
+      "field_of_activity": "chat bot",
+      "attribute": [
+        "intent"
+      ],
+      "input": "I've been experiencing some issues with the latest update. The app crashes occasionally, and it's affecting my overall experience."
+    },
+    "human_mapped_output": {
+      "intent": "Feedback"
+    }
+  },
+  {
+    "api_input": {
+      "field_of_activity": "chat bot",
+      "attribute": [
+        "intent"
+      ],
+      "input": "I appreciate your app, but I think the user interface could be more intuitive. Specifically, navigating through settings feels a bit confusing."
+    },
+    "human_mapped_output": {
+      "intent": "Feedback"
+    }
+  },
+  {
+    "api_input": {
+      "field_of_activity": "chat bot",
+      "attribute": [
+        "intent"
+      ],
+      "input": "I'd like to schedule a meeting with the sales team for next Monday at 2 PM."
+    },
+    "human_mapped_output": {
+      "intent": "Appointment Scheduling"
+    }
+  },
+  {
+    "api_input": {
+      "field_of_activity": "chat bot",
+      "attribute": [
+        "intent"
+      ],
+      "input": "Can I book an appointment with Dr. Smith this Thursday morning for a check-up?"
+    },
+    "human_mapped_output": {
+      "intent": "Appointment Scheduling"
+    }
+  },
+  {
+    "api_input": {
+      "field_of_activity": "chat bot",
+      "attribute": [
+        "intent"
+      ],
+      "input": "I need to set up a conference call with the project team. What slots are available this week?"
+    },
+    "human_mapped_output": {
+      "intent": "Appointment Scheduling"
+    }
+  },
+  {
+    "api_input": {
+      "field_of_activity": "chat bot",
+      "attribute": [
+        "intent"
+      ],
+      "input": "Is there a good restaurant nearby, and can you show me the way there?"
+    },
+    "human_mapped_output": {
+      "intent": "Navigation Request"
+    }
+  },
+  {
+    "api_input": {
+      "field_of_activity": "chat bot",
+      "attribute": [
+        "intent"
+      ],
+      "input": "How do I get to the central train station from here?"
+    },
+    "human_mapped_output": {
+      "intent": "Navigation Request"
+    }
+  },
+  {
+    "api_input": {
+      "field_of_activity": "chat bot",
+      "attribute": [
+        "intent"
+      ],
+      "input": "Can you give me directions to the nearest pharmacy?"
+    },
+    "human_mapped_output": {
+      "intent": "Navigation Request"
+    }
+  },
+  {
+    "api_input": {
+      "field_of_activity": "chat bot",
+      "attribute": [
+        "intent"
+      ],
+      "input": "What locations do you offer delivery services to?"
+    },
+    "human_mapped_output": {
+      "intent": "Information Request"
+    }
+  },
+  {
+    "api_input": {
+      "field_of_activity": "chat bot",
+      "attribute": [
+        "intent"
+      ],
+      "input": "Tell me more about the features of your latest smartphone model."
+    },
+    "human_mapped_output": {
+      "intent": "Information Request"
+    }
+  },
+  {
+    "api_input": {
+      "field_of_activity": "chat bot",
+      "attribute": [
+        "intent"
+      ],
+      "input": "Can you provide me with information about your pricing plans?"
+    },
+    "human_mapped_output": {
+      "intent": "Information Request"
+    }
+  },
+  {
+    "api_input": {
+      "field_of_activity": "chat bot",
+      "attribute": [
+        "intent"
+      ],
+      "input": "I want to order a large pepperoni pizza for delivery."
+    },
+    "human_mapped_output": {
+      "intent": "Transaction or Purchase"
+    }
+  },
+  {
+    "api_input": {
+      "field_of_activity": "chat bot",
+      "attribute": [
+        "intent"
+      ],
+      "input": "Purchase the latest smartphone model."
+    },
+    "human_mapped_output": {
+      "intent": "Transaction or Purchase"
+    }
+  },
+  {
+    "api_input": {
+      "field_of_activity": "chat bot",
+      "attribute": [
+        "intent"
+      ],
+      "input": "Buy a new pair of running shoes."
+    },
+    "human_mapped_output": {
+      "intent": "Transaction or Purchase"
+    }
+  },
+  {
+    "api_input": {
+      "field_of_activity": "chat bot",
+      "attribute": [
+        "intent"
+      ],
+      "input": "I would like to cancel my subscription effective immediately."
+    },
+    "human_mapped_output": {
+      "intent": "Cancellation Request"
+    }
+  },
+  {
+    "api_input": {
+      "field_of_activity": "chat bot",
+      "attribute": [
+        "intent"
+      ],
+      "input": "Please stop the ongoing service, and cancel any future payments."
+    },
+    "human_mapped_output": {
+      "intent": "Cancellation Request"
+    }
+  },
+  {
+    "api_input": {
+      "field_of_activity": "chat bot",
+      "attribute": [
+        "intent"
+      ],
+      "input": "I've decided to cancel my order. Can you guide me through the cancellation process?"
+    },
+    "human_mapped_output": {
+      "intent": "Cancellation Request"
+    }
+  },
+  {
+    "api_input": {
+      "field_of_activity": "chat bot",
+      "attribute": [
+        "intent"
+      ],
+      "input":  "Affirmative, please book a flight from New York to Los Angeles for next week."
+    },
+    "human_mapped_output": {
+      "intent": "Confirmation"
+    }
+  },
+  {
+    "api_input": {
+      "field_of_activity": "chat bot",
+      "attribute": [
+        "intent"
+      ],
+      "input": "Confirm that my reservation is for two adults on the 15th of March."
+    },
+    "human_mapped_output": {
+      "intent": "Confirmation"
+    }
+  },
+  {
+    "api_input": {
+      "field_of_activity": "chat bot",
+      "attribute": [
+        "intent"
+      ],
+      "input": "Yes, I want to proceed with the purchase."
+    },
+    "human_mapped_output": {
+      "intent": "Confirmation"
+    }
+  }
+]

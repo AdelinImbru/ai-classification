@@ -1,0 +1,7 @@
+[
+  {
+    "name": "intent",
+    "description": "Identifying the purpose or goal behind a user's input.",
+    "type": "string"
+  }
+]

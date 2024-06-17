@@ -1,0 +1,16 @@
+[
+  {
+    "api_input": {
+      "field_of_activity": "email center",
+      "attribute": [
+        "persons", "locations", "organizations"
+      ],
+      "input": "In the bustling city of New York, John Smith, an accomplished architect, works tirelessly on groundbreaking projects for ABC Architects. Meanwhile, Mary Johnson, a renowned scientist, leads groundbreaking research at the prestigious University of Cambridge.\n\nAs part of their collaborative efforts, they recently attended the Global Innovators Conference in San Francisco, where they discussed the latest advancements in technology. During the conference, they met with representatives from SpaceX and Google X, two leading organizations in the field of innovation.\n\nJohn Smith's innovative designs have garnered attention not only in the United States but also in Paris, where his architectural marvels have been showcased in several exhibitions. Mary Johnson, on the other hand, frequently collaborates with scientists in Berlin and Tokyo, contributing to the global scientific community.\n\nBoth individuals are considered key figures in their respective fields, and their work continues to have a profound impact on architectural and scientific communities worldwide.\n"
+    },
+    "human_mapped_output": {
+      "persons": ["John Smith", "Mary Johnson"],
+      "locations": ["New York", "San Francisco", "Paris", "Berlin", "Tokyo"],
+      "organizations": ["ABC Architects", "University of Cambridge", "SpaceX", "Google X"]
+    }
+  }
+]

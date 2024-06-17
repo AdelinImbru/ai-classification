@@ -1,0 +1,67 @@
+[
+  {
+    "name": "Greeting",
+    "description": "An user is saying hello or initiating a conversation.",
+    "attribute": "intent"
+  },
+  {
+    "name": "Goodbye",
+    "description": "An user is concluding the conversation or saying goodbye",
+    "attribute": "intent"
+  },
+  {
+    "name": "Question",
+    "description": "An user is asking for information or clarification",
+    "attribute": "intent"
+  },
+  {
+    "name": "Expression of Gratitude",
+    "description": "An user is expressing thanks or gratitude",
+    "attribute": "intent"
+  },
+  {
+    "name": "Negative Sentiment",
+    "description": "An user is expressing dissatisfaction, disappointment, or negativity",
+    "attribute": "intent"
+  },
+  {
+    "name": "Positive Sentiment",
+    "description": "An user is expressing satisfaction, happiness, or positivity",
+    "attribute": "intent"
+  },
+  {
+    "name": "Feedback",
+    "description": "An user is providing feedback on a product, service, or experience",
+    "attribute": "intent"
+  },
+  {
+    "name": "Appointment Scheduling",
+    "description": "An user is attempting to schedule an appointment or set a meeting",
+    "attribute": "intent"
+  },
+  {
+    "name": "Navigation Request",
+    "description": "An user is asking for directions or navigation assistance",
+    "attribute": "intent"
+  },
+  {
+    "name": "Information Request",
+    "description": "An user is seeking general information on a topic",
+    "attribute": "intent"
+  },
+  {
+    "name": "Transaction or Purchase",
+    "description": "An user is attempting to make a transaction or purchase",
+    "attribute": "intent"
+  },
+  {
+    "name": "Cancellation Request",
+    "description": "An user wants to cancel a service or subscription",
+    "attribute": "intent"
+  },
+  {
+    "name": "Confirmation",
+    "description": "An user is confirming a decision, action, or information",
+    "attribute": "intent"
+  }
+]
