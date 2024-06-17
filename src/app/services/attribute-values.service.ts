@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { IAttribute } from './attribute.service';
 import { url } from '../environment';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 
 export interface IAttributeValues {
   name: string;
@@ -21,11 +21,10 @@ export class AttributeValuesService {
     Authorization: `Bearer ${this.token}`,
   });
   constructor(private http: HttpClient) {}
-  getAttributeValues() {
-    this.http
-      .get(this.api)
-      .subscribe((data) => (this.attributeValues = data as IAttributeValues[]));
-    return this.attributeValues;
+  getAttributeValues(attribute_id: string) {
+    let params= new HttpParams().set('attribute', attribute_id)
+    return this.http
+      .get(this.api + 's', {headers: this.headers, params: params})
   }
 
   addAttributeValues(attributeValues: IAttributeValues) {

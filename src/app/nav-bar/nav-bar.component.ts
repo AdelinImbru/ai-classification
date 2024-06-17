@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { IUser, UserService } from '../services/user.service';
-import { Observable } from 'rxjs';
+import { Observable, interval, mergeMap } from 'rxjs';
 
 @Component({
   selector: 'app-nav-bar',
@@ -10,16 +10,25 @@ import { Observable } from 'rxjs';
 })
 export class NavBarComponent implements OnInit {
   user!: IUser;
-  constructor(private router: Router, private userService: UserService) {}
+  constructor(private router: Router, private userService: UserService) {
+    interval(5 * 60 * 1000)
+    .pipe(
+        mergeMap(() => this.userService.verifyToken())).subscribe({
+          next:(data) => this.userService.is_token_valid = true,
+          error: () => {
+            this.logout()
+          }
+        })
+  }
   ngOnInit(): void {
     this.userService.user.subscribe(data=>this.user=data as IUser)
     if(!this.user){
       let usr = localStorage.getItem('loggedUser')
-      if(this.userService.verifyToken() && usr){
-        this.user=JSON.parse(usr) as IUser
-      }
+      if(usr && this.userService.is_token_valid){
+      this.user=JSON.parse(usr) as IUser
     }
   }
+}
 
   logout() {
     this.userService.logout()

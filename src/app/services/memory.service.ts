@@ -3,9 +3,10 @@ import { Injectable } from '@angular/core';
 import { url } from '../environment';
 
 export interface IMemory {
+  id?: number;
   input: string;
   output: string;
-  user_id: number;
+  user: number;
   field_of_activity: string;
 }
 
@@ -13,7 +14,7 @@ export interface IMemory {
   providedIn: 'root',
 })
 export class MemoryService {
-  api = url.apiKey + 'memory';
+  api = url.apiKey;
   memory!: IMemory[];
   token = localStorage.getItem('token');
   headers = new HttpHeaders({
@@ -21,21 +22,19 @@ export class MemoryService {
   });
   constructor(private http: HttpClient) {}
   getMemory() {
-    this.http
-      .get(this.api)
-      .subscribe((data) => (this.memory = data as IMemory[]));
-    return this.memory;
+    return this.http
+      .get(this.api + 'memories', {headers: this.headers})
   }
 
   addMemory(memory: IMemory) {
-    return this.http.post(this.api + '/', memory, { headers: this.headers });
+    return this.http.post(this.api + 'addmemory/', memory, { headers: this.headers });
   }
 
   updateMemory(id: number, memory: IMemory) {
-    return this.http.patch(this.api + '/' + id.toString(), memory);
+    return this.http.patch(this.api + 'memory/' + id.toString(), memory);
   }
 
   deleteMemory(id: number) {
-    return this.http.delete(this.api + '/' + id.toString());
+    return this.http.delete(this.api + 'delete-memory', {body: {'id':id.toString()}, headers: this.headers});
   }
 }

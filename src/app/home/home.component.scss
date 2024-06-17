@@ -149,7 +149,7 @@
 .form label .input + span {
   position: absolute;
   left: 10px;
-  top: 15px;
+  top: 0px;
   color: grey;
   font-size: 0.9em;
   cursor: text;
@@ -157,7 +157,7 @@
 }
 
 .form label .input:placeholder-shown + span {
-  top: 15px;
+  top: 0px;
   font-size: 0.9em;
 }
 

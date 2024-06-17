@@ -4,29 +4,27 @@
     <mat-form-field>
       <mat-label> Field of activity </mat-label>
 
-      <input matInput formControlName="field_of_activity" name="field_of_activity" required />
+      <input matInput id="field_of_activity" formControlName="field_of_activity" name="field_of_activity" [disabled]="use_template" required />
       <mat-error> Please provide a domain for the classification </mat-error>
     </mat-form-field>
     <mat-form-field>
       <mat-label> Select the attributes that you want to map. </mat-label>
-      <mat-select multiple formControlName="attributes" name="attributes">
-        <mat-option *ngFor="let attribute of attributes" [value]="attribute">{{
-          attribute.name
-        }}</mat-option>
+      <mat-select multiple formControlName="attributes" name="attributes" id="attributes" [required]="!use_template" [disabled]="use_template">
+        <mat-option *ngFor="let attribute of ($attributes | async)" [value]="attribute.id"><div class="option">{{attribute.name}} <mat-icon class="icon" fontIcon="delete" (click)="deleteAttribute(attribute.id)"></mat-icon></div></mat-option>
         <button
           mat-raised-button
           style="background-color: black; color: whitesmoke"
-          (click)="openDialog()"
+          (click)="openDialog('attribute')"
         >
           Add attribute
         </button>
       </mat-select>
     </mat-form-field>
-    <mat-form-field>
+    <mat-form-field *ngIf="dbSetup.use_attribute_values">
       <mat-label
         >Input the number of values retrieved for each attribute</mat-label
       >
-      <input
+      <input 
         matInput
         formControlName="number_of_attribute_values"
         name="number_of_attribute_values"
@@ -34,30 +32,45 @@
         min="1"
         max="50"
         id="number_of_attribute_values"
-        required
+        [required]="dbSetup.use_attribute_values"
       />
       <mat-error>
         Please provide the number of values retrieved for each attribute.
       </mat-error>
     </mat-form-field>
-    <!-- <div class="d-flex">
-      <mat-slide-toggle formControlName="mapping_template"></mat-slide-toggle>
+    <div class="d-flex">
+      <mat-slide-toggle (change)="useTemplate()"></mat-slide-toggle>
       <p style="color: whitesmoke">Use mapping templates</p>
-    </div> -->
-    <mat-form-field>
+    </div>
+    <mat-form-field *ngIf="use_template">
       <mat-label> Select the mapping template that you want to use. </mat-label>
-      <mat-select formControlName="mapping_template" name="mapping_template">
-        <mat-option *ngFor="let template of templates" [value]="template.id">{{
-          template.name
-        }}</mat-option>
+      <mat-select formControlName="mapping_template" name="mapping_template" [required]="use_template" (selectionChange)="onChange()">
+        <mat-option *ngFor="let template of ($templates | async)" [value]="template"><div class="option">{{template.name}} <mat-icon (click)="deleteTemplate(template.id)" fontIcon="delete"></mat-icon></div></mat-option>
+                <button
+                mat-raised-button
+                style="background-color: black; color: whitesmoke"
+                (click)="openDialog('template')"
+              >
+                Add template
+              </button>
       </mat-select>
     </mat-form-field>
 
-    <div class="d-flex">
+    <div class="d-flex" style="justify-content: center; align-items: center; flex-direction: column;" *ngIf="templates.length==0 && use_template">
+    <p>The current user does not have any templates. Create one pressing the button below.</p>
+    <button
+    mat-raised-button
+    style="background-color: black; color: whitesmoke"
+    (click)="openDialog('template')"
+  >
+    Add template
+  </button>
+</div>
+    <div class="d-flex" *ngIf="dbSetup.use_attribute_values">
       <mat-slide-toggle formControlName="use_descriptions"></mat-slide-toggle>
       <p style="color: whitesmoke">Use descriptions for attributes</p>
     </div>
-    <mat-form-field>
+    <mat-form-field *ngIf="dbSetup.use_memory">
       <mat-label>Number of values retrieved from memory</mat-label>
       <input
         matInput
@@ -68,7 +81,7 @@
         max="50"
         id="number_of_memory_values"
         (keyup.enter)="onSubmit()"
-        required
+        [required]="dbSetup.use_memory"
       />
       <mat-error>
         Please provide the number of values retrieved for each attribute.

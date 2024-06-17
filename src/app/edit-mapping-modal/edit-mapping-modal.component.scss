@@ -1,0 +1,52 @@
+.buttons {
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+  }
+
+.center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height:100%;
+}
+
+  button {
+    background-color: whitesmoke;
+    border-radius: 20px;
+    border: inset;
+    box-shadow: 15px 15px 30px rgb(25, 25, 25), -15px -15px 30px rgb(60, 60, 60);
+  }
+
+  .wrapper {
+    background-color: rgb(19, 9, 9);
+    color: whitesmoke;
+    display: inline-flex;
+    width: 100%;
+    height: 100%;
+    justify-content: space-around;
+    align-items: center;
+    overflow-y: hidden;
+}
+
+form {
+    display: flex;
+    width:50%;
+    height: 60%;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 2rem;
+    overflow-y: auto;
+    overflow-x: hidden;
+    align-items: center;
+}
+
+.title{
+  width:100%;
+  height:20%;
+  background-color: rgb(19, 9, 9);
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}

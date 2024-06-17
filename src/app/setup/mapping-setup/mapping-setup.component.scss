@@ -1,4 +1,5 @@
 form {
+  margin-top: 8rem !important;
   display: flex;
   min-width: 50%;
   max-height: 85%;
@@ -15,7 +16,7 @@ form {
   border-radius: 50px;
   box-shadow: 15px 15px 30px rgb(25, 25, 25), -15px -15px 30px rgb(60, 60, 60);
   mat-form-field {
-    min-width: 50%;
+    min-width: 50% !important;
   }
 }
 
@@ -34,8 +35,20 @@ form {
 
 button {
   background-color: whitesmoke;
+  margin: 1em;
   border-radius: 20px;
   border: inset;
   box-shadow: 15px 15px 30px rgb(25, 25, 25), -15px -15px 30px rgb(60, 60, 60);
 }
 
+.option{
+display: flex;
+width:20vw !important;
+justify-content: space-between;
+.icon{
+  float:right;
+}
+.icon:hover{
+  transform:scale(1.2)
+}
+}

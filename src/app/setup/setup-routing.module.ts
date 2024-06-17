@@ -2,14 +2,14 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DbSetupComponent } from './db-setup/db-setup.component';
 import { MappingSetupComponent } from './mapping-setup/mapping-setup.component';
-import { authGuard } from '../auth.guard';
+import { AuthGuardService as AuthGuard } from '../services/auth-guard.service';
 
 const routes: Routes = [
-  { path: 'dbsetup', component: DbSetupComponent, canActivate: [authGuard] },
+  { path: 'dbsetup', component: DbSetupComponent, canActivate: [AuthGuard] },
   {
     path: 'mappingsetup',
     component: MappingSetupComponent,
-    canActivate: [authGuard],
+    canActivate: [AuthGuard],
   },
 ];
 

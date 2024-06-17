@@ -53,14 +53,23 @@ export interface IToken {
 }
 
 export interface IMappingSetup{
+  id:number;
   user: number;
   field_of_activity: string;
-  attributes: IAttribute[];
+  attributes: string[];
   number_of_attribute_values: number;
-  mapping_template: IMappingTemplate;
+  mapping_template: any | null;
   use_descriptions: boolean;
   number_of_memory_values: number;
   use_check_prompts: boolean;
+}
+
+export interface IContact{
+  first_name: string;
+  last_name: string;
+  email: string;
+  phone: string;
+  message: string;
 }
 
 @Injectable({
@@ -69,6 +78,7 @@ export interface IMappingSetup{
 export class UserService {
   private userSubject: BehaviorSubject<IUser | null>;
   public user: Observable<IUser | null>;
+  public is_token_valid: boolean = true
   api = url.apiKey;
   token!: string;
   registeredUser!: IRegisteredUser;
@@ -84,7 +94,7 @@ export class UserService {
   register(user: IRegister) {
     return this.http.post(this.api + 'register/', user);
   }
-
+  
   login(user: ILogin): Observable<IToken>{
     return this.http.post<IToken>(this.api + 'token/', user).pipe(map(token => {
       this.userSubject.next(token.user)
@@ -100,7 +110,9 @@ export class UserService {
 
   logout(){
     this.userSubject.next(null)
+    this.user=this.userSubject.asObservable()
     localStorage.clear()
+    this.is_token_valid=false
     return this.http.post(this.api + 'token/blacklist/', this.token);
   }
 
@@ -109,11 +121,13 @@ export class UserService {
   }
 
   verifyToken() {
-    return this.http.post(this.api + 'token/verify/', this.token);
+    let token=localStorage.getItem('token')
+    return this.http.post(this.api + 'token/verify/', {'token':token});
   }
 
   blackListToken() {
-    return this.http.post(this.api + 'token/blacklist/', this.token);
+    let token=localStorage.getItem('token')
+    return this.http.post(this.api + 'token/blacklist/', token);
   }
 
   getCurrentUser(): Observable<IUser>  {
@@ -145,5 +159,21 @@ export class UserService {
 
   setMappingSetup(mappingSetup: IMappingSetup){
     return this.http.post(this.api + 'mapping-setup/', mappingSetup, {headers: this.headers})
+  }
+
+  getMappingSetup(){
+    return this.http.get(this.api + 'mapping-setup', {headers: this.headers})
+  }
+
+  dbSetup(files: FormData){
+    return this.http.post(this.api + 'dbsetup/', files, {headers: this.headers})
+  }
+
+  contactSupport(data: any){
+    return this.http.post(this.api + 'contact/', data)
+  }
+
+  getDbSetup(){
+    return this.http.get(this.api + 'dbsetup', {headers: this.headers})
   }
 }

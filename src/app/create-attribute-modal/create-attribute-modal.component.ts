@@ -4,6 +4,7 @@ import { AttributeService, IAttribute } from '../services/attribute.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { IUser, UserService } from '../services/user.service';
 import { Observable } from 'rxjs';
+import { Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-create-attribute-modal',
@@ -19,7 +20,8 @@ export class CreateAttributeModalComponent {
   ) {}
 
   createAttributeForm!: FormGroup;
-  attribute!: IAttribute;
+  @Output() new_attribute = new EventEmitter<IAttribute>(); 
+  attributes!: IAttribute[]
   errorMessage: any;
   keys!: string[];
   user!: IUser;
@@ -28,7 +30,7 @@ export class CreateAttributeModalComponent {
     this.userService.user.subscribe(data=>this.user=data as IUser);
     if(!this.user){
       let usr = localStorage.getItem('loggedUser')
-      if(this.userService.verifyToken() && usr){
+      if(this.userService.is_token_valid && usr){
         this.user=JSON.parse(usr) as IUser
       }
     }
@@ -44,10 +46,11 @@ export class CreateAttributeModalComponent {
       .addAttribute(this.createAttributeForm.value as IAttribute)
       .subscribe({
         next: (data) => {
-          this.attribute = data as IAttribute;
+          this.attributes = data as IAttribute[];
+          this.attributeService.setAttributes(this.attributes)
         },
         error: (error) => {
-          this.errorMessage = error.error;
+          this.errorMessage = error.status + ' ' + error.statusText;
           this.keys = Object.keys(this.errorMessage);
         },
       });

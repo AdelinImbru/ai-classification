@@ -44,12 +44,14 @@ mat-card {
 }
 
 .login-form {
+  padding: 1rem;
   overflow-y: auto;
   min-height: 250px;
   min-width: 300px;
 }
 
 .register-form {
+  padding: 1rem;
   overflow-y: auto;
   min-width: 50%;
   min-height: fit-content;

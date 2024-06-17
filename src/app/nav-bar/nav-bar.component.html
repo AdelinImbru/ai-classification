@@ -1,6 +1,6 @@
 <mat-toolbar
   style="
-    background-color: grey;
+    background-color: rgb(111, 111, 111);
     padding: 0;
     margin: 0;
     position: fixed;
@@ -41,7 +41,7 @@
     *ngIf="user"
     >Classification</a
   >
-
+  <a class="link" href="http://127.0.0.1:8000/admin" *ngIf="user && user.is_superuser">Admin</a>
   <div class="buttons">
     <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="menu">
       <mat-icon style="color: whitesmoke">menu</mat-icon>
@@ -51,7 +51,7 @@
         Logout
       </button>
       <button mat-menu-item type="button" (click)="profile()" *ngIf="user">
-        {{ user.username }}
+        {{ user | fullname }}
       </button>
       <button mat-menu-item type="button" (click)="login()" *ngIf="!user">
         Login

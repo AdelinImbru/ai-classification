@@ -1,6 +1,13 @@
-<div class="wrapper">
+<div class="wrapper" *ngIf="!response">
   <div class="container">
-    <h1>Classification</h1>
+    <div class="d-flex" style="justify-content: center; align-items: center; gap: 1rem">
+    <h1 style="padding:0; margin: 0;">Classification</h1>
+    <mat-icon #tooltip="matTooltip"
+    matTooltip="The file should be a JSON file containing an array of objects that have the field 'input'. Example of content: [{input: text for classification}, {input: second text for classification}]"
+    mat-tooltip-panel-above
+    matTooltipHideDelay="100000"
+    fontIcon="info" *ngIf="useFileAsInput"></mat-icon>
+  </div>
     <div class="d-flex">
       <mat-slide-toggle
         (click)="useFileAsInput = !useFileAsInput"
@@ -13,7 +20,7 @@
         style="gap: 1rem; font-size: large"
       >
         <strong>Input for classification.</strong>
-        <span class="textarea" role="textbox" contenteditable></span>
+        <span class="textarea" role="textbox" id="input" contenteditable></span>
       </p>
     </ng-container>
     <ng-container *ngIf="useFileAsInput">
@@ -66,5 +73,7 @@
         </div>
       </div>
     </ng-container>
+    <button mat-raised-button (click)="query()">Query</button>
   </div>
 </div>
+<app-edit-mapping-modal w-100 *ngIf="response" [mappings]="response"></app-edit-mapping-modal>

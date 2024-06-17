@@ -1,0 +1,33 @@
+<div class="dialog">
+    <form [formGroup]="createTemplateForm">
+      <h2>Create Template</h2>
+      <mat-form-field>
+        <mat-label> Insert the name of the template </mat-label>
+        <input matInput formControlName="name" name="name" required />
+        <mat-error> Please provide a name for the template </mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label> Insert the description of the template </mat-label>
+        <input matInput formControlName="description" name="description" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label> Insert the type of the template </mat-label>
+        <input matInput formControlName="field_of_activity" name="field_of_activity" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label> Select the attributes that you want to map. </mat-label>
+        <mat-select multiple formControlName="attributes" name="attributes">
+          <mat-option *ngFor="let attribute of ($attributes | async)" [value]="attribute.id">{{
+            attribute.name
+          }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <div class="buttons">
+        <button mat-button mat-dialog-close>Exit</button>
+        <button mat-button [mat-dialog-close]="true" (click)="createMappingTemplate()">
+          Create
+        </button>
+      </div>
+    </form>
+  </div>
+  

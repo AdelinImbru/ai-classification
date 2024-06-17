@@ -8,6 +8,7 @@ import {
   UserService,
 } from '../services/user.service';
 import { Observable } from 'rxjs';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-auth',
@@ -15,7 +16,7 @@ import { Observable } from 'rxjs';
   styleUrls: ['./auth.component.scss'],
 })
 export class AuthComponent implements OnInit {
-  errorMessage: any;
+  errorMessage: any = [];
   loginForm!: FormGroup;
   registerForm!: FormGroup;
   formValid = true;
@@ -28,7 +29,8 @@ export class AuthComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
-    private userService: UserService
+    private userService: UserService,
+    private _snackBar: MatSnackBar
   ) {}
 
   ngOnInit(): void {
@@ -52,19 +54,20 @@ export class AuthComponent implements OnInit {
        this.userService.login(this.loginForm.value as ILogin).subscribe({
         next: (data) => {
           this.token = data.access;
+          this.userService.is_token_valid=true
+          this.router.navigate(['home'])
         },
         error: (error) => {
-          this.errorMessage = error.error;
+          this.errorMessage = error.status + ' ' + error.statusText;
           this.keys = Object.keys(this.errorMessage);
-        },
+          this.formValid = false; 
+          this._snackBar.open('Please check if all the fields are completed correctly or contact us by going at the bottom on the homepage.', 'Error', {
+            horizontalPosition: 'end',
+            verticalPosition: 'top',
+        })
+      }
       });
     }
-    if(this.errorMessage){
-      this.formValid = false; 
-    }
-     else {
-      this.router.navigate(['/home'])
-         }
   }
   
 
@@ -74,32 +77,23 @@ export class AuthComponent implements OnInit {
         .register(this.registerForm.value as IRegister)
         .subscribe({
           error: (error) => {
-            this.errorMessage = error.error;
+            this.errorMessage = error.status + ' ' + error.statusText;
             this.keys = Object.keys(this.errorMessage);
           },
         });
       if (!this.errorMessage) {
-        this.userService
-          .login({
-            username: this.registerForm.value['username'],
-            password: this.registerForm.value['password'],
-          })
-          .subscribe({
-            next: (data) => {
-              this.token = data.access;
-            },
-            error: (error) => {
-              this.errorMessage.append(error.error);
-              this.keys = Object.keys(this.errorMessage);
-            },
-          });
+        location.reload()
+        this._snackBar.open('Account created succesfully', 'Success', {
+          horizontalPosition: 'end',
+          verticalPosition: 'top',
+        });
       }
-    }
-    if (this.token) {
-      localStorage.setItem('token', this.token);
-      this.router.navigate(['/home']);
-    } else {
-      this.formValid = false;
+      else{
+        this._snackBar.open('Please check if all the fields are completed correctly.', 'Error', {
+          horizontalPosition: 'end',
+          verticalPosition: 'top',
+        });
+      }
     }
   }
 

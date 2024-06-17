@@ -1,5 +1,6 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { ClassificationService } from '../services/classification.service';
 
 @Component({
   selector: 'app-classification',
@@ -7,14 +8,18 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   styleUrls: ['./classification.component.scss'],
 })
 export class ClassificationComponent {
-  constructor(private snackBar: MatSnackBar) {}
+  constructor(private snackBar: MatSnackBar, private classificationService: ClassificationService) {}
   useFileAsInput: boolean = false;
   input: string = '';
+  errorMessage: any;
+  keys!: string[];
+  response: any;
 
   ngOnInit() {}
 
   @ViewChild('fileDropRef', { static: false }) fileDropEl!: ElementRef;
   files: any[] = [];
+  uploadedFiles: File[] = []
 
   onFileDropped($event: any[]) {
     this.prepareFilesList($event);
@@ -24,6 +29,7 @@ export class ClassificationComponent {
     if (event.target != null) {
       if (event.target.files != null) {
         let files = event.target.files;
+        this.uploadedFiles.push(event.target.files[0])
         this.prepareFilesList(files);
       }
     }
@@ -35,6 +41,7 @@ export class ClassificationComponent {
       return;
     }
     this.files.splice(index, 1);
+    this.uploadedFiles.splice(index, 1)
   }
 
   getUploadSpeed(index: number) {
@@ -84,5 +91,42 @@ export class ClassificationComponent {
     const sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
     const i = Math.floor(Math.log(bytes) / Math.log(k));
     return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i];
+  }
+
+  query(){
+    if(this.useFileAsInput && this.uploadedFiles){
+      let filesForm = new FormData()
+      for(let file of this.uploadedFiles){
+        filesForm.append(file.name, file)
+      }
+      this.classificationService.query_file(filesForm).subscribe({
+        next: (data) => {
+        this.response=data
+      },
+      error: (error) => {
+        this.errorMessage.push(error.status + ' ' + error.statusText);
+        this.keys = Object.keys(this.errorMessage);
+      }
+    })
+    }
+    let span = document.getElementById("input")
+    if (!this.useFileAsInput && span){
+      this.input=span?.innerText
+      this.classificationService.query_text(this.input).subscribe({
+        next: (data) => {
+        this.response=data
+       },
+      error: (error) => {
+        this.errorMessage.push(error.status + ' ' + error.statusText);
+        this.keys = Object.keys(this.errorMessage);
+      }
+    })
+    }
+    if(this.errorMessage){
+      this.snackBar.open('Please check if all the fields are completed correctly or contact us.', 'Error', {
+        horizontalPosition: 'end',
+        verticalPosition: 'top',
+      });
+    }
   }
 }

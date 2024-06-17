@@ -145,36 +145,37 @@
         <p class="title">Contact us</p>
         <div class="flex">
           <label>
-            <input required placeholder="" type="text" class="input" />
-            <span>Firstname</span>
+            <input required #firstName placeholder="" type="text" class="input" />
+            <span>First name</span>
           </label>
 
           <label>
-            <input required placeholder="" type="text" class="input" />
-            <span>Lastname</span>
+            <input required #lastName placeholder="" type="text" class="input" />
+            <span>Last name</span>
           </label>
         </div>
 
         <label>
-          <input required placeholder="" type="email" class="input" />
+          <input required #email placeholder="" type="email" class="input" />
           <span>Email</span>
         </label>
 
         <label>
           <input
             required
+            #phoneNumber
             placeholder=""
             type="tel"
             class="input"
-            pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
+            pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
           />
           <span>Phone Number</span>
         </label>
         <label>
-          <input required placeholder="" type="text" class="input" />
+          <input required #message placeholder="" type="text" class="input" />
           <span>How can we help you?</span>
         </label>
-        <button class="submit">Submit</button>
+        <button class="submit" (click)="submit()">Submit</button>
       </form>
     </div>
   </div>

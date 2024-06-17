@@ -66,25 +66,11 @@
                 Sign up
               </button>
             </div>
-            <div *ngIf="this.errorMessage">
-              <div *ngFor="let key of this.keys">
-                <p style="color: red; margin-top: 1rem">
-                  {{ this.errorMessage[key] }}
-                </p>
-              </div>
-            </div>
           </form>
         </ng-template>
         <ng-template [ngIf]="this.switch">
           <form [formGroup]="registerForm" class="register-form">
             <h2>Register</h2>
-            <div *ngIf="this.errorMessage">
-              <div *ngFor="let key of this.keys">
-                <p style="color: red; margin-top: 1rem">
-                  {{ key + ": " + this.errorMessage[key] }}
-                </p>
-              </div>
-            </div>
             <mat-form-field>
               <input
                 matInput

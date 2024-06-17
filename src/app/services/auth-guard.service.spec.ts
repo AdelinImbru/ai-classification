@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { AttributeFileService } from './attribute-file.service';
+import { AuthGuardService } from './auth-guard.service';
 
-describe('AttributeFileService', () => {
-  let service: AttributeFileService;
+describe('AuthGuardService', () => {
+  let service: AuthGuardService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(AttributeFileService);
+    service = TestBed.inject(AuthGuardService);
   });
 
   it('should be created', () => {

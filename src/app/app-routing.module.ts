@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ClassificationComponent } from './classification/classification.component';
-import { authGuard } from './auth.guard';
+import { AuthGuardService as AuthGuard } from './services/auth-guard.service'
 import { ProfileComponent } from './profile/profile.component';
 
 const routes: Routes = [
@@ -18,12 +18,12 @@ const routes: Routes = [
   {
     path: 'classification',
     component: ClassificationComponent,
-    canActivate: [authGuard],
+    canActivate: [AuthGuard],
   },
   {
     path: 'profile',
     component: ProfileComponent,
-    canActivate: [authGuard],
+    canActivate: [AuthGuard],
   },
 ];
 @NgModule({

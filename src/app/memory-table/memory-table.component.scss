@@ -1,0 +1,61 @@
+.mat-elevation-z8{
+ height:fit-content;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ flex-direction: column;
+ border-style: inset;
+ border-color: whitesmoke;
+ width:100%;
+ flex-grow: 1;
+ background: rgb(19, 9, 9);
+}
+
+table, th, td{
+  border: 1px solid rgb(19, 9, 9);
+  border-collapse: collapse;
+  padding: 5px;
+  color: whitesmoke;
+}
+table, td{
+  background-color: rgb(19, 9, 9);
+  color:whitesmoke
+}
+
+table{
+  border-style: inset;
+  border-color: whitesmoke;
+  border: 1px;
+  min-height: 15.6vh;
+  min-width:99%;
+}
+  
+  mat-icon {
+    cursor: pointer;
+  }
+
+  .input {
+    margin-bottom: 1rem;
+    display: flex;
+    color: rgb(19, 9, 9);
+    border-radius: 50px;
+    block-size: 20px;
+    padding: 18px 15px;
+    outline: none;
+    text-align: center;
+    width: 10%;
+    transition: 0.5s;
+  }
+  
+  .input:hover {
+    width: 15%;
+  }
+  
+  .input:focus {
+    width: 20%;
+  }
+
+.paginator{
+  width:25%;
+  margin-bottom: 2rem;
+}

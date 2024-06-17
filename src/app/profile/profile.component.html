@@ -1,20 +1,15 @@
-<div class="wrapper">
-  <div class="header">
-    <h1>Profile</h1>
-    <button class="btn-class-name" (click)="editable()">
-      <span class="back"></span>
-      <span class="front">Edit</span>
-    </button>
-  </div>
-  <div *ngIf="this.errorMessage">
-    <div *ngFor="let key of this.keys">
-      <p style="color: red; margin-top: 1rem">
-        {{ this.errorMessage[key] }}
-      </p>
-    </div>
-  </div>
+<div class="center">
+  <div class="wrapper">
+    <h1 style="color:whitesmoke; margin-top: 5rem">{{user | fullname}}</h1>
 
   <form [formGroup]="profileForm">
+    <div class="header">
+      <h1 style="color:whitesmoke">Profile</h1>
+      <button class="btn-class-name" (click)="editable()">
+        <span class="back"></span>
+        <span class="front">Edit</span>
+      </button>
+    </div>
     <mat-form-field>
       <label> Username </label>
       <input matInput formControlName="username" name="username" required />
@@ -32,20 +27,13 @@
       <label> Email </label>
       <input matInput formControlName="email" name="email" />
     </mat-form-field>
-    <mat-form-field>
-      <label> Groups </label>
-      <input matInput formControlName="groups" name="groups" />
-    </mat-form-field>
-    <mat-form-field>
-      <label> Permissions </label>
-      <input
-        matInput
-        formControlName="user_permissions"
-        name="user_permissions"
-      />
-    </mat-form-field>
+    <div class="buttons">
+    <button mat-raised-button *ngIf="editable_var" (click)="save()">
+      Save changes
+    </button>
+    <button mat-raised-button *ngIf="editable_var" (click)="cancel()">Cancel</button>
+    </div>
   </form>
-  <button mat-button *ngIf="this.editable" (click)="save()">
-    Save changes
-  </button>
+</div>
+<app-memory-table w-100 style="width: 100%; background-color: rgb(19,9,9)"></app-memory-table>
 </div>

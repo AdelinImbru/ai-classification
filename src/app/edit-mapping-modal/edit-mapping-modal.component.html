@@ -1,0 +1,30 @@
+<div class="center"><div class="title">
+  <h1 style="color:whitesmoke;">Mapping {{index+1}}/{{mappings.length}}</h1>
+</div>
+<div class="wrapper">
+<pre style="color:whitesmoke; height: 60%; width:40%; overflow: scroll;" [innerHTML]="mappings[index] | json"></pre>
+<form [formGroup]="editMappingsForm" *ngIf="mappingSetup">
+    <div class="buttons">
+    <button mat-raised-button (click)="previous()" [disabled]="index==0">Previous</button>
+    <button mat-raised-button (click)="next()" [disabled]="index==mappings.length-1">Next</button>
+    </div>
+    <h2>Edit mappings</h2>
+    <div *ngFor="let attr of mappingSetup.attributes">
+    <mat-form-field>
+      <mat-label> {{attr.name}} </mat-label>
+      <mat-select [formControl]="newFormControl(attr.name)">
+        <mat-option *ngFor="let value of values.get(attr.name)" [value]="value.name">{{
+          value.name
+        }}</mat-option> 
+        </mat-select>
+             <mat-error> Please choose a value for the attribute </mat-error>
+    </mat-form-field>
+    </div>
+    <div class="buttons">
+      <button mat-raised-button (click)="exit()">Exit</button>
+      <button mat-raised-button (click)="save()">
+        Edit
+      </button>
+    </div>
+  </form>
+</div></div>

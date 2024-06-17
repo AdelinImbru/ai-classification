@@ -4,15 +4,6 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { InfoDialogComponent } from 'src/app/info-dialog/info-dialog.component';
-import {
-  AttributeFileService,
-  IAttributeFile,
-  Type,
-} from 'src/app/services/attribute-file.service';
-import {
-  IMemoryFile,
-  MemoryFileService,
-} from 'src/app/services/memory-file.service';
 import { IUser, UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -27,8 +18,6 @@ export class DbSetupComponent {
     private formBuilder: FormBuilder,
     private router: Router,
     public dialog: MatDialog,
-    private attributeFileService: AttributeFileService,
-    private memoryFileService: MemoryFileService,
     public _snackBar: MatSnackBar,
     private userService: UserService
   ) {}
@@ -38,13 +27,13 @@ export class DbSetupComponent {
   attributeFile!: File;
   attributeValuesFile!: File;
   memoryFile!: File; 
-  filesToUpload: File[] = [];
+  filesToUpload:any = [];
 
   ngOnInit(): void {
     this.userService.user.subscribe(data=>this.loggedUser=data as IUser)
     if(!this.loggedUser){
       let user = localStorage.getItem('loggedUser')
-      if(this.userService.verifyToken() && user){
+      if(this.userService.is_token_valid && user){
         this.loggedUser=JSON.parse(user) as IUser
       }
     }
@@ -75,15 +64,15 @@ export class DbSetupComponent {
     if (event.target.files.length > 0) {
       if(name==='attribute'){
         this.attributeFile=event.target.files[0]
-        // this.dbSetupForm.patchValue({attributesFile: event.target.files[0].name})
-      }
+        this.filesToUpload.push({'file': event.target.files[0], 'type': 'attribute_file'})
+       }
       if(name==='value'){
         this.attributeValuesFile=event.target.files[0]
-        // this.dbSetupForm.patchValue({attributeValuesFile: event.target.files[0].name})
+        this.filesToUpload.push({'file': event.target.files[0], 'type': 'attribute_values_file'})
       }
       if(name==='memory'){
         this.memoryFile=event.target.files[0]
-        // this.dbSetupForm.patchValue({memoryFile: event.target.files[0].name})
+        this.filesToUpload.push({'file': event.target.files[0], 'type': 'memory_file'})
       }
     }
     else{
@@ -91,80 +80,21 @@ export class DbSetupComponent {
     }
   }
 
-  async addAttributeFile(){
-    let attrFormData = new FormData();
-    attrFormData.append('name', this.attributeFile.name);
-    attrFormData.append('type', Type.attributes);
-    attrFormData.append('user', this.loggedUser.id.toString());
-    attrFormData.append('sample_file', this.attributeFile, this.attributeFile.name);
-    await this.attributeFileService.addAttributeFile(attrFormData).subscribe({
-      next: (data) => console.log(data),
-      error: (error) => {
-        this.errorMessage.push(error.error);
-        this.keys = this.keys.concat(Object.keys(this.errorMessage));
-      }, 
-  })
-}
-
-async addAttributeValuesFile(){
-  let valFormData = new FormData();
-  valFormData.append('name', this.attributeValuesFile.name);
-  valFormData.append('type', Type.values);
-  valFormData.append('user', this.loggedUser.id.toString());
-  valFormData.append('sample_file',  this.attributeValuesFile, this.attributeValuesFile.name);
-  await this.attributeFileService
-    .addAttributeFile(valFormData)
-    .subscribe({
-      error: (error) => {
-        this.errorMessage.push(error.error);
-        this.keys = this.keys.concat(Object.keys(this.errorMessage));
-      },
-    });
-}
-
-async addMemoryFile(){
-  let field_of_activity=this.dbSetupForm.value['domain']
-  let memoryFormData = new FormData();
-  memoryFormData.append('name', this.memoryFile.name);
-  memoryFormData.append('memory_file', this.memoryFile, this.memoryFile.name);
-  memoryFormData.append('user', this.loggedUser.id.toString());
-  memoryFormData.append('field_of_activity', field_of_activity);
-  await this.memoryFileService
-    .addMemoryFile(memoryFormData)
-    .subscribe({
-      error: (error) => {
-        this.errorMessage.push(error.error);
-        this.keys = this.keys.concat(Object.keys(this.errorMessage));
-      },
-    });
-}
-
   onSubmit() {
-    //TODO Solve database locked problem when doing the 3 requests.
-      setTimeout(()=>{this.addAttributeFile()}, 2000)
-      setTimeout(()=>{
-      if (
-        this.dbSetupForm.value['useMemory'] &&
-        this.dbSetupForm.value['memoryFile']
-      ) {
-        this.addMemoryFile()
-      }
-    }, 2000)
-    setTimeout(()=>{
-      if (this.dbSetupForm.value['useAttributeValues'] && this.dbSetupForm.value['attributeValuesFile']){
-        this.addAttributeValuesFile()
-      }
-    }, 2000)
-      if (this.errorMessage) {
-        for (let key of this.keys) {
-          this._snackBar.open(this.errorMessage[key], 'Error', {
-            horizontalPosition: 'end',
-            verticalPosition: 'top',
-          });
-        }
-      } 
-      else {
-        this.router.navigate(['mappingsetup']);
-      }
-  }
+    if(this.filesToUpload.length > 0){
+    let field_of_activity=this.dbSetupForm.value['domain']
+    let filesForm = new FormData()
+    for(let f of this.filesToUpload){
+      filesForm.append(f.type, f.file)
+    }
+      filesForm.append('field_of_activity', field_of_activity)
+      filesForm.append('use_attribute_values', this.dbSetupForm.value['useAttributeValues'])
+      filesForm.append('use_memory', this.dbSetupForm.value['useMemory'])
+      filesForm.append('user', this.loggedUser.id.toString());
+      this.userService.dbSetup(filesForm).subscribe((error)=>this._snackBar.open('Please check if all the fields are completed correctly.', 'Error', {
+        horizontalPosition: 'end',
+        verticalPosition: 'top',}))
+    }
+  this.router.navigate(['mappingsetup'])
+}
 }

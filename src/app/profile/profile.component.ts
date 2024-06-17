@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { IUser, UserService } from '../services/user.service';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { Observable } from 'rxjs';
+import { IMemory, MemoryService } from '../services/memory.service';
 
 @Component({
   selector: 'app-profile',
@@ -16,13 +17,14 @@ export class ProfileComponent implements OnInit {
   keys!: string[];
   constructor(
     private formBuilder: FormBuilder,
-    private userService: UserService
+    private userService: UserService,
+    private memoryService: MemoryService
   ) {}
   ngOnInit() {
     this.userService.user.subscribe(data=>this.user=data as IUser);
     if(!this.user){
       let usr = localStorage.getItem('loggedUser')
-      if(this.userService.verifyToken() && usr){
+      if(this.userService.is_token_valid && usr){
         this.user=JSON.parse(usr) as IUser
       }
     }
@@ -69,10 +71,15 @@ export class ProfileComponent implements OnInit {
             this.user = data as IUser;
           },
           error: (error) => {
-            this.errorMessage = error.error;
+            this.errorMessage = error.status + ' ' + error.statusText;
             this.keys = Object.keys(this.errorMessage);
           },
         });
     }
+  }
+
+  cancel(){
+    this.profileForm.reset()
+    this.editable_var=false
   }
 }
