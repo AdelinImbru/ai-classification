@@ -1,10 +1,11 @@
+import { ThisReceiver } from '@angular/compiler';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { InfoDialogComponent } from 'src/app/info-dialog/info-dialog.component';
-import { IUser, UserService } from 'src/app/services/user.service';
+import { IDbSetup, IUser, UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-db-setup',
@@ -28,9 +29,11 @@ export class DbSetupComponent {
   attributeValuesFile!: File;
   memoryFile!: File; 
   filesToUpload:any = [];
+  ok=true;
 
   ngOnInit(): void {
     this.userService.user.subscribe(data=>this.loggedUser=data as IUser)
+    this.userService.getDbSetup().subscribe({next: (data) => this.ok=true, error: (error)=>this.ok=false})
     if(!this.loggedUser){
       let user = localStorage.getItem('loggedUser')
       if(this.userService.is_token_valid && user){
@@ -81,7 +84,6 @@ export class DbSetupComponent {
   }
 
   onSubmit() {
-    if(this.filesToUpload.length > 0){
     let field_of_activity=this.dbSetupForm.value['domain']
     let filesForm = new FormData()
     for(let f of this.filesToUpload){
@@ -91,10 +93,14 @@ export class DbSetupComponent {
       filesForm.append('use_attribute_values', this.dbSetupForm.value['useAttributeValues'])
       filesForm.append('use_memory', this.dbSetupForm.value['useMemory'])
       filesForm.append('user', this.loggedUser.id.toString());
-      this.userService.dbSetup(filesForm).subscribe((error)=>this._snackBar.open('Please check if all the fields are completed correctly.', 'Error', {
+      this.userService.dbSetup(filesForm).subscribe({next: (data) => this.router.navigate(['mappingsetup']),error:(error)=>{
+         this._snackBar.open('Please check if all the fields are completed correctly. The attribute file is mandatory.', 'Error', {
         horizontalPosition: 'end',
-        verticalPosition: 'top',}))
+        verticalPosition: 'top',})
+      }})
     }
-  this.router.navigate(['mappingsetup'])
-}
+
+  goToMappingSetup(){
+    this.router.navigate(['mappingsetup'])
+  }
 }

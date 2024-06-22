@@ -1,4 +1,5 @@
 import json
+import mimetypes
 
 from django.http import JsonResponse, HttpResponseBadRequest, HttpResponse
 from django.conf import settings
@@ -8,7 +9,7 @@ from pydantic import ValidationError
 
 from ai.views import execute_chain_v5
 from dao.models import CustomUser, Attribute, AttributeValue, Memory, MappingTemplate, \
-    MappingSetup, DbSetup
+  MappingSetup, DbSetup
 from ai.serializers import MyTokenObtainPairSerializer, RegisterSerializer, ProfileSerializer, AttributeSerializer, \
     AttributeValueSerializer, AttributeListSerializer, MemorySerializer, \
     MappingTemplateSerializer, MappingSetupSerializer, MappingTemplateListSerializer, DbSetupListSerializer, \
@@ -129,6 +130,16 @@ def create_attribute(request):
 
 @api_view(['POST'])
 @permission_classes([IsAuthenticated])
+def save_all(request):
+    user = request.user
+    serializer = MemorySerializer(data=request.data, many=True)
+    if serializer.is_valid():
+        serializer.save()
+    return Response(serializer.data)
+
+
+@api_view(['POST'])
+@permission_classes([IsAuthenticated])
 def create_template(request):
     user = request.user
     serializer = MappingTemplateSerializer(data=request.data)
@@ -189,8 +200,12 @@ def get_mapping_setup(request):
 @permission_classes([IsAuthenticated])
 def get_db_setup(request):
     user = request.user
-    mapping_setup = DbSetupListSerializer(DbSetup.objects.filter(user=user).values().first(), many=False).data
-    return Response(mapping_setup)
+    db_setup=DbSetup.objects.filter(user=user).first()
+    if db_setup:
+        serialized_db_setup = DbSetupListSerializer(db_setup, many=False).data
+        return Response(serialized_db_setup)
+    else:
+        return HttpResponseBadRequest(HttpResponse(status=404))
 
 
 @api_view(['POST'])
@@ -244,4 +259,3 @@ def contact_support(request):
     except BadHeaderError:
         return HttpResponse("Invalid header found.")
     return Response("Request sent successfully!")
-

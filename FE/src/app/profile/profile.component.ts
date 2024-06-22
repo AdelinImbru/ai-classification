@@ -28,6 +28,11 @@ export class ProfileComponent implements OnInit {
         this.user=JSON.parse(usr) as IUser
       }
     }
+    this.reset();
+    this.editable();
+  }
+
+  reset(){
     this.profileForm = this.formBuilder.group({
       username: new FormControl({
         value: this.user.username || '',
@@ -36,16 +41,7 @@ export class ProfileComponent implements OnInit {
       first_name: new FormControl(this.user.first_name || ''),
       last_name: new FormControl(this.user.last_name || ''),
       email: new FormControl(this.user.email || ''),
-      groups: new FormControl({
-        value: this.user.groups || [],
-        disabled: true,
-      }),
-      user_permissions: new FormControl({
-        value: this.user.user_permissions || [],
-        disabled: true,
-      }),
     });
-    this.editable();
   }
 
   editable() {
@@ -76,10 +72,11 @@ export class ProfileComponent implements OnInit {
           },
         });
     }
+    this.editable();
   }
 
   cancel(){
-    this.profileForm.reset()
-    this.editable_var=false
+    this.reset();
+    this.editable();
   }
 }

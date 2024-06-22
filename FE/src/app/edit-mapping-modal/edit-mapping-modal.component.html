@@ -3,11 +3,7 @@
 </div>
 <div class="wrapper">
 <pre style="color:whitesmoke; height: 60%; width:40%; overflow: scroll;" [innerHTML]="mappings[index] | json"></pre>
-<form [formGroup]="editMappingsForm" *ngIf="mappingSetup">
-    <div class="buttons">
-    <button mat-raised-button (click)="previous()" [disabled]="index==0">Previous</button>
-    <button mat-raised-button (click)="next()" [disabled]="index==mappings.length-1">Next</button>
-    </div>
+<form [formGroup]="editMappingsForm" *ngIf="dbSetup.use_attribute_values">
     <h2>Edit mappings</h2>
     <div *ngFor="let attr of mappingSetup.attributes">
     <mat-form-field>
@@ -23,8 +19,18 @@
     <div class="buttons">
       <button mat-raised-button (click)="exit()">Exit</button>
       <button mat-raised-button (click)="save()">
-        Edit
-      </button>
+        Save
+      </button> 
     </div>
   </form>
-</div></div>
+</div>
+<div class="buttons">
+  <button mat-raised-button (click)="previous()" [disabled]="index==0">Previous</button>
+  <button mat-raised-button (click)="next()" [disabled]="index==mappings.length-1">Next</button>
+  </div>
+<div class="buttons2">
+  <button mat-raised-button (click)="exit()">Exit</button>
+  <button mat-raised-button (click)="save_all()">Save all</button>
+  <button mat-raised-button (click)="save()">Save</button>
+</div>
+</div>

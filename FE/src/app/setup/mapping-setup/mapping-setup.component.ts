@@ -11,12 +11,8 @@ import {
   IAttribute,
 } from 'src/app/services/attribute.service';
 import { IMappingTemplate, MappingTemplateService } from 'src/app/services/mapping-template.service';
-import { IMappingSetup, IUser, UserService } from 'src/app/services/user.service';
+import { IDbSetup, IMappingSetup, IUser, UserService } from 'src/app/services/user.service';
 
-interface IDbSetup{
-  "use_attribute_values": boolean,
-  "use_memory": boolean
-}
 
 @Component({
   selector: 'app-mapping-setup',

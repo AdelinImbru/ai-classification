@@ -147,7 +147,7 @@ class DbSetup(models.Model):
     user = models.ForeignKey(CustomUser, on_delete=models.DO_NOTHING)
     use_attribute_values = models.BooleanField(default=False)
     use_memory = models.BooleanField(default=False)
-    attribute_file = models.FileField(upload_to='uploaded_attributes/', validators=[FileExtensionValidator(allowed_extensions=["json"])])
+    attribute_file = models.FileField(upload_to='uploaded_attributes/', validators=[FileExtensionValidator(allowed_extensions=["json"])], null=True, blank=True)
     attribute_values_file = models.FileField(upload_to='sample/uploaded_attribute_values/', validators=[FileExtensionValidator(allowed_extensions=["json"])],  null=True, blank=True)
     memory_file = models.FileField(upload_to='sample/uploaded_memories/', validators=[FileExtensionValidator(allowed_extensions=["json"])],  null=True, blank=True)
     field_of_activity = models.CharField(max_length=64, help_text="The field of activity for the mapping.", null=True, blank=True)

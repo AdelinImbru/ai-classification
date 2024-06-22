@@ -72,6 +72,11 @@ export interface IContact{
   message: string;
 }
 
+export interface IDbSetup{
+  "use_attribute_values": boolean,
+  "use_memory": boolean
+}
+
 @Injectable({
   providedIn: 'root',
 })
@@ -175,5 +180,16 @@ export class UserService {
 
   getDbSetup(){
     return this.http.get(this.api + 'dbsetup', {headers: this.headers})
+  }
+
+  download(){
+    return this.http.get(this.api + 'download', {headers: this.headers, responseType: 'blob' }).subscribe((response)=>{
+      const url = window.URL.createObjectURL(new Blob([response]));
+      const link = document.createElement('a');
+      link.href = url;
+      link.setAttribute('download', 'results.json');
+      document.body.appendChild(link);
+      link.click();
+    })
   }
 }

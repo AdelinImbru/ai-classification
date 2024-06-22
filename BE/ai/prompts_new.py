@@ -17,7 +17,7 @@ from vectordb import get_vectordb_model
 import cohere
 
 VectorModel = get_vectordb_model()
-co = cohere.Client(os.environ.get('COHERE_API_KEY'))
+# co = cohere.Client(os.environ.get('COHERE_API_KEY'))
 
 
 def show_costs(fp: staticmethod):
@@ -61,9 +61,6 @@ CONTEXT:
 {context}
 INPUT:
 {input}
-HISTORY:
-Take into account the following conversations while mapping, if you consider they are not helpful you can ignore them.
-{history}
 
 {schema}
 """
@@ -83,32 +80,16 @@ Take into account the following conversations while mapping, if you consider the
         self.db_setup = db_setup
 
     def query(self, text: str = '', **kwargs):
-        history = ''
         output_parser = StructuredOutputParser.from_response_schemas(self.schema)
         self.schema = output_parser.get_format_instructions()
         prompt = ChatPromptTemplate.from_template(self.template)
-        input_vals = self.get_input(input=text, **kwargs)
-        formatted_prompt = prompt.format_prompt(**input_vals).messages[0].content
-        if self.db_setup:
-            history = [h.metadata.get('memory') for h in VectorModel.objects.filter(
-                content_type=ContentType.objects.get_for_model(Memory),
-                metadata__field_of_activity__exact=self.mapping_setup.field_of_activity,
-                metadata__user__exact=self.mapping_setup.user.id
-            ).search(formatted_prompt, k=self.mapping_setup.number_of_memory_values)]
         chain = prompt | self.llm | StrOutputParser()
-        response = chain.invoke({"header": self.header, "context": self.context, "input": text, "history": history,
+        response = chain.invoke({"header": self.header, "context": self.context, "input": text,
                                  "schema": self.schema})
         parsed_response = output_parser.parse(response)
         if self.debug:
             print(response, '\n')
         return parsed_response
-
-    def get_input(self, **kwargs):
-        result = {}
-        for k in ChatPromptTemplate.from_template(self.template).input_variables:
-            val = getattr(self, k) if hasattr(self, k) else kwargs.get(k)
-            result[k] = val if type(val) is str else json.dumps(val)
-        return result
 
 
 class AnalystPrompt(ContextPrompt):

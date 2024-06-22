@@ -40,6 +40,7 @@ urlpatterns = [
                   path('api/v1/mapping-templates/', user_views.create_template,
                        name='create-mapping-template'),
                   path('api/v1/addmemory/', user_views.MemoryView.as_view(), name='create-memory'),
+                  path('api/v1/saveall/', user_views.save_all, name='save-all'),
                   path('api/v1/memories', user_views.get_memories, name='get-memories'),
                   path('api/v1/mapping-setup/', user_views.MappingSetupView.as_view(), name='mapping-setup'),
                   path('api/v1/mapping-setup', user_views.get_mapping_setup, name='get-mapping-setup'),

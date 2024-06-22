@@ -20,6 +20,16 @@
         </button>
       </mat-select>
     </mat-form-field>
+    <div class="d-flex" style="justify-content: center; align-items: center; flex-direction: column;" *ngIf="attributes.length == 0">
+      <p>The current user does not have any attributes. Create one pressing the button below.</p>
+      <button
+      mat-raised-button
+      style="background-color: black; color: whitesmoke"
+      (click)="openDialog('attribute')"
+    >
+      Add attribute
+    </button>
+  </div>
     <mat-form-field *ngIf="dbSetup.use_attribute_values">
       <mat-label
         >Input the number of values retrieved for each attribute</mat-label
@@ -56,7 +66,7 @@
       </mat-select>
     </mat-form-field>
 
-    <div class="d-flex" style="justify-content: center; align-items: center; flex-direction: column;" *ngIf="templates.length==0 && use_template">
+    <div class="d-flex" style="justify-content: center; align-items: center; flex-direction: column;" *ngIf="templates.length == 0 && use_template">
     <p>The current user does not have any templates. Create one pressing the button below.</p>
     <button
     mat-raised-button
@@ -88,7 +98,7 @@
       </mat-error>
     </mat-form-field>
     <div class="d-flex">
-      <mat-slide-toggle formControlName="use_check_prompt"></mat-slide-toggle>
+      <mat-slide-toggle [disabled]="dbSetup.use_memory" formControlName="use_check_prompt"></mat-slide-toggle>
       <p style="color: whitesmoke">Use Check Prompt</p>
     </div>
     <button mat-raised-button type="submit" (click)="onSubmit()">Submit</button>

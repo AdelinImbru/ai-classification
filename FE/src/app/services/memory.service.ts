@@ -30,6 +30,10 @@ export class MemoryService {
     return this.http.post(this.api + 'addmemory/', memory, { headers: this.headers });
   }
 
+  saveAll(memories: IMemory[]){
+    return this.http.post(this.api + 'saveall/', memories, { headers: this.headers})
+  }
+
   updateMemory(id: number, memory: IMemory) {
     return this.http.patch(this.api + 'memory/' + id.toString(), memory);
   }

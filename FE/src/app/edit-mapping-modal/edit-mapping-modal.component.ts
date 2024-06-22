@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { IMappingSetup, IUser, UserService } from '../services/user.service';
+import { IDbSetup, IMappingSetup, IUser, UserService } from '../services/user.service';
 import { AttributeValuesService, IAttributeValues } from '../services/attribute-values.service';
 import { IMemory, MemoryService } from '../services/memory.service';
 
@@ -19,6 +19,7 @@ export class EditMappingModalComponent{
   value!: IAttributeValues[]
   index=0;
   valueIndex!: number;
+  dbSetup!: IDbSetup
   values = new Map<string, Array<IAttributeValues>>;
   constructor(
   private userService: UserService, private attributeValuesService: AttributeValuesService, private memoryService: MemoryService){}
@@ -33,6 +34,7 @@ export class EditMappingModalComponent{
       this.keys = Object.keys(this.errorMessage);
     }
   })
+  this.userService.getDbSetup().subscribe(data=>this.dbSetup=data as IDbSetup)
  }
 
 getAttributeValues(mappingSetup: any){
@@ -107,4 +109,26 @@ save(){
       window.location.reload()
 }
 
+save_all(){
+  let loggedUser=localStorage.getItem('loggedUser')
+  let user: IUser
+  let memories: IMemory[] = []
+  if(loggedUser) {
+    user=JSON.parse(loggedUser) 
+  for(let i=0; i<this.mappings.length; i++){
+    let mapping: any =new Map(Object.entries(this.mappings[i]))
+    let memory: IMemory = {input: '', output: '', user: user.id, field_of_activity: this.mappingSetup.field_of_activity}
+    memory.input=mapping.get('input')
+    mapping.delete('input')
+    mapping.delete('messages')
+    memory.output=JSON.stringify(Object.fromEntries(mapping.entries()))
+    memories.push(memory)
+  }
+  this.memoryService.saveAll(memories).subscribe(data=>{console.log(data); this.mappings=[]; this.index=0; window.location.reload()})
+}
+}
+
+download(){
+  this.userService.download()
+}
 }

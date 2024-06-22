@@ -206,7 +206,6 @@ class MappingSetupSerializer(serializers.ModelSerializer):
             attr[0].attributes.set([a.get('id') for a in attrib])
         elif 'attributes' in attrs and attrs['attributes']:
             attr[0].attributes.set(attrs['attributes'])
-        import ipdb; ipdb.set_trace()
         attr[0].save()
         return attr[0]
 
@@ -221,7 +220,7 @@ class DbSetupSerializer(serializers.ModelSerializer):
     user = serializers.PrimaryKeyRelatedField(many=False, queryset=CustomUser.objects.all())
     use_attribute_values = serializers.BooleanField(required=True)
     use_memory = serializers.BooleanField(required=True)
-    attribute_file = serializers.FileField(required=True)
+    attribute_file = serializers.FileField(required=False)
     attribute_values_file = serializers.FileField(required=False)
     memory_file = serializers.FileField(required=False)
     field_of_activity = serializers.CharField(required=False)
@@ -238,19 +237,20 @@ class DbSetupSerializer(serializers.ModelSerializer):
             defaults={
                 'use_attribute_values': attrs['use_attribute_values'],
                 'use_memory': attrs['use_memory'],
-                'attribute_file': attrs['attribute_file'],
+                'attribute_file': attrs['attribute_file'] if 'attribute_file' in attrs else None,
                 'attribute_values_file': attrs['attribute_values_file'] if 'attribute_values_file' in attrs else None,
                 'memory_file': attrs['memory_file'] if 'memory_file' in attrs else None,
             })
-        attributes = json.loads(attrs['attribute_file'].file.getvalue())
-        for a in attributes:
-            Attribute.objects.update_or_create(
-                name=a.get('name'),
-                defaults={
-                    'description': a.get('description'),
-                    'type': a.get('type'),
-                    'user': attrs['user']
-                })
+        if 'attribute_file' in attrs and attrs['attribute_file']:
+            attributes = json.loads(attrs['attribute_file'].file.getvalue())
+            for a in attributes:
+                Attribute.objects.update_or_create(
+                    name=a.get('name'),
+                    defaults={
+                        'description': a.get('description'),
+                        'type': a.get('type'),
+                        'user': attrs['user']
+                    })
         if attrs['use_attribute_values'] and 'attribute_values_file' in attrs:
             attribute_values = json.loads(attrs['attribute_values_file'].file.getvalue())
             for value in attribute_values:
