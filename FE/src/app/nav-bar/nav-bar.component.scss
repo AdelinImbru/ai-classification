@@ -5,7 +5,7 @@
   font-weight: bolder;
   margin: 10px;
   &:hover {
-    border-bottom: 3px solid whitesmoke;
+    border-bottom: 3px solid rgb(225, 222, 222);
   }
 }
 .active {
@@ -19,5 +19,50 @@
   width: 100%;
   button {
     margin: 5px;
+  }
+}
+
+.links{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center; 
+  background-color: rgb(111, 111, 111);
+  flex: 1;
+  .link{
+    display: flex;
+    margin: 0;
+    font-size: 18px;
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width:100%;
+  min-width: 800px !important; 
+  padding:0;
+  margin:0;
+}
+
+.toolbar{
+  position: fixed;
+  z-index: 100;
+  background-color: rgb(111, 111, 111);
+  padding: 0;
+  margin: 0;
+}
+
+.sidenav-container {
+  background-color: rgb(111, 111, 111);
+  flex: 1;
+}
+
+
+.sidenav{
+  height:fit-content;
+  left:0px;
+  button{
+    margin:3px;
   }
 }

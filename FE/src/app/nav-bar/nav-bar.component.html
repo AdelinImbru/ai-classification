@@ -1,3 +1,53 @@
+<div class="container d-lg-none" [class.example-is-mobile]="mobileQuery.matches">
+  <mat-toolbar class="toolbar">
+  <button mat-icon-button (click)="snav.toggle()" style="color:whitesmoke"><mat-icon>menu</mat-icon></button>
+  <a
+    routerLink="/home"
+    style="
+      display: inline-flex;
+      max-height: fit-content;
+      max-width: 70px;
+      max-height: 100%;
+    "
+  >
+  <img
+  src="./././assets/images/logo.png"
+  style="max-width: 100%; max-height: 100%; object-fit: cover; opacity: 0.7"
+  alt="logo"
+  />
+</a>
+  <mat-sidenav-container class="sidenav-container"
+                        [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+    <mat-sidenav #snav class="sidenav" [mode]="mobileQuery.matches ? 'over' : 'side'"
+                [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
+      <mat-nav-list class="links">
+        <a class="link" routerLink="/home" routerLinkActive="active">Home</a>
+        <a class="link" routerLink="/dbsetup" routerLinkActive="active" *ngIf="user"
+          >Setup</a
+        >
+        <a
+          class="link"
+          routerLink="/classification"
+          routerLinkActive="active"
+          *ngIf="user"
+          >Classification</a
+        >
+        <a class="link" href="http://127.0.0.1:8000/admin" *ngIf="user && user.is_superuser">Admin</a>
+        <button mat-raised-button (click)="logout()" *ngIf="user">
+          Logout
+        </button>
+        <button mat-raised-button (click)="profile()" *ngIf="user">
+          {{ user | fullname }}
+        </button>
+        <button mat-raised-button (click)="login()" *ngIf="!user">
+          Login
+        </button>
+      </mat-nav-list>
+    </mat-sidenav>
+  </mat-sidenav-container>
+  </mat-toolbar>
+</div>
+<div class="d-none d-md-flex">
 <mat-toolbar
   style="
     background-color: rgb(111, 111, 111);
@@ -16,20 +66,21 @@
       max-height: 100%;
     "
   >
-    <img
-      src="./././assets/images/logo.png"
-      style="max-width: 100%; max-height: 100%; object-fit: cover; opacity: 0.7"
-      alt="logo"
-    />
-  </a>
-  <div style="display: flex; flex-direction: column; align-items: center">
-    <strong style="color: whitesmoke; padding: 0px; margin: 0">
-      AIClassification
-    </strong>
-    <p style="color: whitesmoke; font-size: 15px; padding: 0px; margin: 0">
-      V 1.0.0
-    </p>
-  </div>
+  <img
+  src="./././assets/images/logo.png"
+  style="max-width: 100%; max-height: 100%; object-fit: cover; opacity: 0.7"
+  alt="logo"
+  />
+</a>
+<div style="display: flex; flex-direction: column; align-items: center">
+  <strong style="color: whitesmoke; padding: 0px; margin: 0">
+    AIClassification
+  </strong>
+  <p style="color: whitesmoke; font-size: 15px; padding: 0px; margin: 0">
+    V 1.0.0
+  </p>
+</div>
+
   <a class="link" routerLink="/home" routerLinkActive="active">Home</a>
   <a class="link" routerLink="/dbsetup" routerLinkActive="active" *ngIf="user"
     >Setup</a
@@ -59,3 +110,4 @@
     </mat-menu>
   </div>
 </mat-toolbar>
+</div>
