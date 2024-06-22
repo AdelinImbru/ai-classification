@@ -42,7 +42,7 @@ ngOnDestroy(): void {
 }
 
   logout() {
-    this.userService.logout()
+    this.userService.logout().subscribe(data=>console.log(data))
     this.router.navigate(['/auth']);
   }
 

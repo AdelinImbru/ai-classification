@@ -104,6 +104,7 @@ export class UserService {
     return this.http.post<IToken>(this.api + 'token/', user).pipe(map(token => {
       this.userSubject.next(token.user)
       localStorage.setItem('token', token.access);
+      localStorage.setItem('refresh', token.refresh)
       localStorage.setItem('loggedUser', JSON.stringify(token.user))
       this.token=token.access
       this.headers = new HttpHeaders({
@@ -116,9 +117,8 @@ export class UserService {
   logout(){
     this.userSubject.next(null)
     this.user=this.userSubject.asObservable()
-    localStorage.clear()
     this.is_token_valid=false
-    return this.http.post(this.api + 'token/blacklist/', this.token);
+    return this.http.post(this.api + 'token/blacklist/', {'refresh': localStorage.getItem('refresh')});
   }
 
   refreshToken(refresh: string) {

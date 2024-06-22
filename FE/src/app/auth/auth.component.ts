@@ -34,6 +34,7 @@ export class AuthComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    localStorage.clear()
     this.loginForm = this.formBuilder.group({
       username: [localStorage.getItem('username') || '', Validators.required],
       password: ['', Validators.required],
